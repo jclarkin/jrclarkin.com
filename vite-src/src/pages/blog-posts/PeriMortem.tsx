@@ -45,16 +45,24 @@ const PeriMortem: React.FC = () => {
             After some levity about the awkwardness of this meeting, the first activity began. Each team member wrote down the things they believe I had been doing on the team. I was to not participate in this ideation, forcing everyone else to reflect on my visible and invisible roles.
           </p>
 
-          <div className="bg-gray-100 p-4 rounded-lg text-center">
-            <p className="text-gray-600 font-medium">Team Work</p>
+          <div className="my-6">
+            <img 
+              src="/images/PeriMortem-Team.jpg" 
+              alt="Team working together on sticky notes during the peri-mortem session"
+              className="w-full max-w-2xl mx-auto rounded-lg shadow-md"
+            />
           </div>
 
           <p>
             Once all the sticky-notes were posted on the wall, the team time-boxed 5 minutes to organize, categorize, and remove duplicates.
           </p>
 
-          <div className="bg-gray-100 p-4 rounded-lg text-center">
-            <p className="text-gray-600 font-medium">Ideation</p>
+          <div className="my-6">
+            <img 
+              src="/images/PeriMortem-Ideation.jpg" 
+              alt="Ideation sticky notes organized on the wall"
+              className="w-full max-w-2xl mx-auto rounded-lg shadow-md"
+            />
           </div>
 
           <p>
@@ -67,16 +75,24 @@ const PeriMortem: React.FC = () => {
             Our next goal was to pick which skills were most important to the team. We discussed what criteria made a skill "important" to us: was it skills we were going to lose, skills we wanted greater redundancy, or highly valued skills the team wants new members to encompass?
           </p>
 
-          <div className="bg-gray-100 p-4 rounded-lg text-center">
-            <p className="text-gray-600 font-medium">Discussions</p>
+          <div className="my-6">
+            <img 
+              src="/images/PeriMortem-Discussions.jpg" 
+              alt="Team discussions about important skills and criteria"
+              className="w-full max-w-2xl mx-auto rounded-lg shadow-md"
+            />
           </div>
 
           <p>
             Once that was defined, we moved to dot-voting: 5 each. We immediately removed any skill with less than three dots, so that we could focus on the top priorities.
           </p>
 
-          <div className="bg-gray-100 p-4 rounded-lg text-center">
-            <p className="text-gray-600 font-medium">Skills</p>
+          <div className="my-6">
+            <img 
+              src="/images/PeriMortem-Skills.jpg" 
+              alt="Skills listed on sticky notes with dot voting results"
+              className="w-full max-w-2xl mx-auto rounded-lg shadow-md"
+            />
           </div>
 
           <p>The top skills are:</p>
@@ -93,8 +109,12 @@ const PeriMortem: React.FC = () => {
             We iterated on the <em>Morale</em> item as it was vague and difficult to identify in a new hire. We replaced it with <em>Personality</em> focusing on <em>good communicating & teaching</em> and <em>passionate about software craftsmanship</em>
           </p>
 
-          <div className="bg-gray-100 p-4 rounded-lg text-center">
-            <p className="text-gray-600 font-medium">Skills Refined</p>
+          <div className="my-6">
+            <img 
+              src="/images/PeriMortem-SkillsRefined.jpg" 
+              alt="Refined skills list after iteration and discussion"
+              className="w-full max-w-2xl mx-auto rounded-lg shadow-md"
+            />
           </div>
 
           <p>
@@ -111,8 +131,12 @@ const PeriMortem: React.FC = () => {
             We made a list of any other stresses caused by my leaving. Mostly, they relate to ownership and tribal knowledge, which are problems the team has been trying to aleviate. Each individual in the team is a special unicorn without redundancy protection.
           </p>
 
-          <div className="bg-gray-100 p-4 rounded-lg text-center">
-            <p className="text-gray-600 font-medium">Stressors</p>
+          <div className="my-6">
+            <img 
+              src="/images/PeriMortem-Stressors.jpg" 
+              alt="List of stressors caused by departure and potential solutions"
+              className="w-full max-w-2xl mx-auto rounded-lg shadow-md"
+            />
           </div>
 
           <h2 className="text-2xl font-bold mt-8 mb-4">Conclusion</h2>
@@ -121,8 +145,12 @@ const PeriMortem: React.FC = () => {
             Armed with these lists, in the open and known to all, it is easier for the team to tackle the problems and to not feel alone during the transition. This team is composed of a great people, and I know they can achieve lofty goals. I hope that this session (as odd as it was for me) helps the team overcome the chaos I have introduced with my departure.
           </p>
 
-          <div className="bg-gray-100 p-4 rounded-lg text-center">
-            <p className="text-gray-600 font-medium">Satir Change Model</p>
+          <div className="my-6">
+            <img 
+              src="/images/PeriMortem-Satir.png" 
+              alt="Satir Change Model diagram showing the stages of change"
+              className="w-full max-w-2xl mx-auto rounded-lg shadow-md"
+            />
           </div>
 
           <p>

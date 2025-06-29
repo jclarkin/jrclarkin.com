@@ -41,6 +41,25 @@ const RunningARetrospective: React.FC = () => {
             <li><em>Gamestorming: A Playbook for Innovators, Rulebreakers, and Changemakers</em></li>
           </ul>
 
+          <div className="flex flex-wrap gap-4 justify-center my-6">
+            <div className="text-center">
+              <img 
+                src="/images/BookAgileRetro.jpg" 
+                alt="Agile Retrospectives: Making Good Teams Great book cover"
+                className="w-32 h-auto mx-auto rounded-lg shadow-md"
+              />
+              <p className="text-sm text-gray-600 mt-2">Agile Retrospectives</p>
+            </div>
+            <div className="text-center">
+              <img 
+                src="/images/BookGameStorming.jpg" 
+                alt="Gamestorming: A Playbook for Innovators, Rulebreakers, and Changemakers book cover"
+                className="w-32 h-auto mx-auto rounded-lg shadow-md"
+              />
+              <p className="text-sm text-gray-600 mt-2">Gamestorming</p>
+            </div>
+          </div>
+
           <p>
             I selected a series of activities to get people talking, and to progress from individual contributions towards team decisions. With my outline in-hand, I was nervous but ready for the event.
           </p>

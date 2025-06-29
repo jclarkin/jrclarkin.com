@@ -37,6 +37,15 @@ const ContextDriveTestingTheAwakening: React.FC = () => {
             <li>In the blue corner: James Bach and the CDT community</li>
           </ul>
 
+          <div className="my-6 text-center">
+            <img 
+              src="/images/rockem-sockem-robots1.jpg" 
+              alt="Rock'em Sock'em Robots - representing the ongoing feud between testing communities"
+              className="w-64 h-auto mx-auto rounded-lg shadow-md"
+            />
+            <p className="text-sm text-gray-600 mt-2 italic">The ongoing battle between different testing philosophies</p>
+          </div>
+
           <p>While researching the Tester schism, I came across this wonderful paper on the Schools of Software Testing by Bret Pettichord:</p>
 
           <ul className="list-disc list-inside space-y-2">
@@ -58,6 +67,15 @@ const ContextDriveTestingTheAwakening: React.FC = () => {
           <p>
             The CDT intentionally is choosing terminology to break from the mould and put the intelligent individual at the center of "Testing". Much like 'agile' it does not prescribe single solution to rule them all.
           </p>
+
+          <div className="my-6 text-center">
+            <img 
+              src="/images/l_one_ring_gold_italian.jpg" 
+              alt="The One Ring from Lord of the Rings - representing the fallacy of seeking one solution to rule them all"
+              className="w-48 h-auto mx-auto rounded-lg shadow-md"
+            />
+            <p className="text-sm text-gray-600 mt-2 italic">Unlike the One Ring, there is no single testing solution to rule them all</p>
+          </div>
 
           <ul className="list-disc list-inside space-y-2">
             <li>Does that mean there is no room for Analytic School of testing if you follow CDT? Nope! If your context suits mathematical metrics and proofs to decrease risk (and thus increase value), go for it!</li>

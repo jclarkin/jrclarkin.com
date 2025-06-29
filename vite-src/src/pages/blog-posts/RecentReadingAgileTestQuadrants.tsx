@@ -32,16 +32,24 @@ const RecentReadingAgileTestQuadrants: React.FC = () => {
 
           <p>Here is the diagram I am referencing</p>
 
-          <div className="bg-gray-100 p-4 rounded-lg text-center">
-            <p className="text-gray-600 font-medium">Agile Testing Quadrants Model</p>
+          <div className="my-6">
+            <img 
+              src="/images/Agile-Testing-Quadrants.png" 
+              alt="Agile Testing Quadrants Model by Brian Marick showing the four quadrants of testing"
+              className="w-full max-w-2xl mx-auto rounded-lg shadow-md"
+            />
           </div>
 
           <p>
             I now have a new book added to my To Do list: <em>Agile Testing: A Practical Guide for Testers and Agile Teams</em>
           </p>
 
-          <div className="bg-gray-100 p-4 rounded-lg text-center">
-            <p className="text-gray-600 font-medium">Agile Testing Book</p>
+          <div className="my-6">
+            <img 
+              src="/images/BookAgileTesting.jpg" 
+              alt="Agile Testing: A Practical Guide for Testers and Agile Teams book cover"
+              className="w-full max-w-md mx-auto rounded-lg shadow-md"
+            />
           </div>
 
           <p>

@@ -99,12 +99,44 @@ expect(calculator.subtract(5, 2)).to.equal(3);`}
               Both Smolder and TestLink are focused on content management of test specifications, plans, and requirements. SonarQube is focused on code analysis and reporting metrics that may indicate overall product quality. For reporting, if already using one of these tools, it is worth investigating the results of integrating JavaScript unit tests. However, it may be overkill for some teams and may be difficult to migrate to a different future solution if keeping the report history is important.
             </p>
             <p className="mt-2">
-              Since Mocha offers output in both TAP and XUnit, it could be sufficient to build a custom reporting tool that processes these outputs and displays the state of all checks. If the goal is to never leave checks failing, a custom reporter would be a better choice. It would be designed to only display information relevant to the team (see Image 1).
+              Since Mocha offers output in both TAP and XUnit, it could be sufficient to build a custom reporting tool that processes these outputs and displays the state of all checks. If the goal is to never leave checks failing, a custom reporter would be a better choice. It would be designed to only display information relevant to the team (see Images 1-4).
             </p>
-            <div className="bg-gray-50 p-4 rounded-lg my-4">
-              <p className="text-sm text-gray-600 mb-2">Image 1: Custom Domain-based Unit Test Reporter</p>
-              <div className="bg-white p-4 rounded border text-center">
-                <p className="text-gray-500">[Custom dashboard showing test results organized by domain/feature]</p>
+            
+            <div className="space-y-4 my-6">
+              <div>
+                <img 
+                  src="/images/JSUT-1.png" 
+                  alt="JavaScript Unit Testing custom reporter interface - overview"
+                  className="w-full max-w-2xl mx-auto rounded-lg shadow-md"
+                />
+                <p className="text-sm text-gray-600 text-center mt-2">Image 1: Custom Domain-based Unit Test Reporter Overview</p>
+              </div>
+              
+              <div>
+                <img 
+                  src="/images/JSUT-2.png" 
+                  alt="JavaScript Unit Testing custom reporter interface - detailed view"
+                  className="w-full max-w-2xl mx-auto rounded-lg shadow-md"
+                />
+                <p className="text-sm text-gray-600 text-center mt-2">Image 2: Detailed Test Results View</p>
+              </div>
+              
+              <div>
+                <img 
+                  src="/images/JSUT-3.png" 
+                  alt="JavaScript Unit Testing custom reporter interface - test execution"
+                  className="w-full max-w-2xl mx-auto rounded-lg shadow-md"
+                />
+                <p className="text-sm text-gray-600 text-center mt-2">Image 3: Test Execution Interface</p>
+              </div>
+              
+              <div>
+                <img 
+                  src="/images/JSUT-4.png" 
+                  alt="JavaScript Unit Testing custom reporter interface - configuration"
+                  className="w-full max-w-2xl mx-auto rounded-lg shadow-md"
+                />
+                <p className="text-sm text-gray-600 text-center mt-2">Image 4: Reporter Configuration Options</p>
               </div>
             </div>
           </div>
