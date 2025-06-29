@@ -23,6 +23,7 @@ export default defineConfig(({ mode }) => ({
   build: {
     outDir: "dist",
     assetsDir: "assets",
+    minify: 'terser', // Use terser instead of esbuild for minification
     rollupOptions: {
       output: {
         assetFileNames: "assets/[name]-[hash][extname]",
