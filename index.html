@@ -5,28 +5,153 @@
     <link rel="icon" type="image/png" href="./favicon.png" />
     <link rel="icon" type="image/x-icon" href="./favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Jonathan Clarkin</title>
-    <meta name="description" content="Jonathan Clarkin's personal website" />
-    <meta name="keywords" content="Jonathan Clarkin, developer, software engineer" />
+    
+    <!-- SEO Meta Tags -->
+    <title>Jonathan Clarkin - Software Engineer & Technology Leader</title>
+    <meta name="description" content="Jonathan Clarkin's personal website. Software engineer passionate about testing, development, and building great products. Explore my blog posts on technology, development practices, and industry insights." />
+    <meta name="keywords" content="Jonathan Clarkin, software engineer, developer, software testing, agile development, technology leadership, programming, web development" />
     <meta name="author" content="Jonathan Clarkin" />
     
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://jrclarkin.com/" />
-    <meta property="og:title" content="Jonathan Clarkin" />
-    <meta property="og:description" content="Jonathan Clarkin's personal website" />
+    <meta property="og:title" content="Jonathan Clarkin - Software Engineer & Technology Leader" />
+    <meta property="og:description" content="Software engineer passionate about testing, development, and building great products. Explore my blog posts on technology and development practices." />
     <meta property="og:image" content="https://jrclarkin.com/og-image.png" />
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image" />
     <meta property="twitter:url" content="https://jrclarkin.com/" />
-    <meta property="twitter:title" content="Jonathan Clarkin" />
-    <meta property="twitter:description" content="Jonathan Clarkin's personal website" />
+    <meta property="twitter:title" content="Jonathan Clarkin - Software Engineer & Technology Leader" />
+    <meta property="twitter:description" content="Software engineer passionate about testing, development, and building great products." />
     <meta property="twitter:image" content="https://jrclarkin.com/og-image.png" />
-    <script type="module" crossorigin src="./assets/index-CLxrZNyn.js"></script>
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://jrclarkin.com/" />
+    
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Jonathan Clarkin",
+      "url": "https://jrclarkin.com",
+      "sameAs": [
+        "https://github.com/jclarkin"
+      ],
+      "jobTitle": "Software Engineer",
+      "description": "Software engineer passionate about testing, development, and building great products",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://jrclarkin.com"
+      }
+    }
+    </script>
+
+    <!-- CSS will be injected here during build -->
     <link rel="stylesheet" crossorigin href="./assets/index-BloSC-H1.css">
+    
+    <!-- Redirect to SPA after SEO crawlers have read the content -->
+    <script>
+      // Only redirect if this is a user (not a crawler)
+      if (!/bot|crawler|spider|crawling/i.test(navigator.userAgent)) {
+        // Allow more time for crawlers to read homepage content
+        setTimeout(() => {
+          window.location.href = '/';
+        }, 200);
+      }
+    </script>
   </head>
   <body>
+    <!-- SEO-friendly content for crawlers -->
+    <div id="seo-content" style="max-width: 800px; margin: 0 auto; padding: 2rem; font-family: system-ui, sans-serif; line-height: 1.6;">
+      <header style="text-align: center; margin-bottom: 3rem;">
+        <h1 style="font-size: 2.5rem; margin-bottom: 0.5rem; color: #1a1a1a;">Jonathan Clarkin</h1>
+        <p style="font-size: 1.2rem; color: #666; margin-bottom: 1rem;">Software Engineer & Technology Leader</p>
+        <p style="color: #888;">Passionate about testing, development, and building great products</p>
+      </header>
+      
+      <main>
+        <section style="margin-bottom: 3rem;">
+          <h2 style="color: #333; border-bottom: 2px solid #eee; padding-bottom: 0.5rem;">About Me</h2>
+          <p>I'm a software engineer with experience in full-stack development, focusing on creating scalable and user-friendly applications. I have a particular passion for software testing, agile methodologies, and development practices that improve code quality and team productivity.</p>
+        </section>
+
+        <section style="margin-bottom: 3rem;">
+          <h2 style="color: #333; border-bottom: 2px solid #eee; padding-bottom: 0.5rem;">Recent Blog Posts</h2>
+          <div style="display: grid; gap: 1.5rem;">
+            <article>
+      <h3><a href="https://jrclarkin.com/blog/peri-mortem">Planning For My Departure</a></h3>
+      <p class="date">February 19, 2015</p>
+      <p>I have experienced the departure of many colleagues at Mxi, and each time it has been emotional and stressful. Now it is my turn to leave...</p>
+    </article>
+    <article>
+      <h3><a href="https://jrclarkin.com/blog/staff-ranking">Staff Ranking for Rankled Staff</a></h3>
+      <p class="date">November 27, 2014</p>
+      <p>For over the last decade, I have had managers that practiced stack ranking. It wasn't until after be subjected to the first one that I started to protest the effectiveness of that system...</p>
+    </article>
+    <article>
+      <h3><a href="https://jrclarkin.com/blog/boltons-new-agile-ecosystem">Bolton's New Agile Testing Ecosystem</a></h3>
+      <p class="date">November 4, 2014</p>
+      <p>I often make reference to the Agile Quadrants model to help explain different modes of testing, and how automation is just a part of a larger domain of testing...</p>
+    </article>
+    <article>
+      <h3><a href="https://jrclarkin.com/blog/selenium-workshop">Running a Workshop - Lessons Learned</a></h3>
+      <p class="date">October 16, 2014</p>
+      <p>This month I had the opportunity to give a workshop at this year's Targeting Quality conference in Kitchener-Waterloo. I lead my attendees on a quest to empower them with the tools to author Selenium WebDriver scripts...</p>
+    </article>
+    <article>
+      <h3><a href="https://jrclarkin.com/blog/running-a-retrospective">Running a Retrospective</a></h3>
+      <p class="date">August 15, 2014</p>
+      <p>This month, I ran my first retrospective for a different team at work. I've been participating in retrospectives run by my team mate and have wanted to try my hand at facilitating...</p>
+    </article>
+          </div>
+          <p style="margin-top: 2rem;"><a href="https://jrclarkin.com/blog" style="color: #0066cc; text-decoration: none;">View all blog posts →</a></p>
+        </section>
+
+        <section>
+          <h2 style="color: #333; border-bottom: 2px solid #eee; padding-bottom: 0.5rem;">Links</h2>
+          <nav style="display: flex; gap: 2rem; flex-wrap: wrap;">
+            <a href="https://jrclarkin.com/blog" style="color: #0066cc; text-decoration: none;">Blog</a>
+            <a href="https://jrclarkin.com/tools" style="color: #0066cc; text-decoration: none;">Tools</a>
+            <a href="https://github.com/jclarkin" style="color: #0066cc; text-decoration: none;">GitHub</a>
+          </nav>
+        </section>
+      </main>
+    </div>
+    
+    <!-- SPA will load here for users -->
     <div id="root"></div>
+    
+    <!-- JavaScript will be injected here during build -->
+    <script type="module" crossorigin src="./assets/index-CLxrZNyn.js"></script>
+
+    <style>
+      #seo-content article {
+        border: 1px solid #eee;
+        padding: 1.5rem;
+        border-radius: 8px;
+        background: #fafafa;
+      }
+      #seo-content article h3 {
+        margin: 0 0 0.5rem 0;
+        font-size: 1.1rem;
+      }
+      #seo-content article h3 a {
+        color: #333;
+        text-decoration: none;
+      }
+      #seo-content article h3 a:hover {
+        color: #0066cc;
+      }
+      #seo-content article .date {
+        font-size: 0.9rem;
+        color: #666;
+        margin: 0 0 1rem 0;
+      }
+      #seo-content article p:last-child {
+        margin-bottom: 0;
+      }
+    </style>
   </body>
-</html> 
+</html>

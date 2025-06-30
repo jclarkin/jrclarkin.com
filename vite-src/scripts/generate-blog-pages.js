@@ -334,8 +334,159 @@ function generatePageHTML(route, title, description) {
 </html>`;
 }
 
+// Function to generate enhanced index.html
+function generateIndexHTML() {
+  const latestPosts = blogPosts.slice(0, 5); // Get 5 most recent posts
+  const postsHTML = latestPosts.map(post => 
+    `<article>
+      <h3><a href="https://jrclarkin.com${post.route}">${post.title}</a></h3>
+      <p class="date">${post.date}</p>
+      <p>${post.description}</p>
+    </article>`
+  ).join('\n    ');
+
+  return `<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/png" href="./favicon.png" />
+    <link rel="icon" type="image/x-icon" href="./favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <!-- SEO Meta Tags -->
+    <title>Jonathan Clarkin - Software Engineer & Technology Leader</title>
+    <meta name="description" content="Jonathan Clarkin's personal website. Software engineer passionate about testing, development, and building great products. Explore my blog posts on technology, development practices, and industry insights." />
+    <meta name="keywords" content="Jonathan Clarkin, software engineer, developer, software testing, agile development, technology leadership, programming, web development" />
+    <meta name="author" content="Jonathan Clarkin" />
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://jrclarkin.com/" />
+    <meta property="og:title" content="Jonathan Clarkin - Software Engineer & Technology Leader" />
+    <meta property="og:description" content="Software engineer passionate about testing, development, and building great products. Explore my blog posts on technology and development practices." />
+    <meta property="og:image" content="https://jrclarkin.com/og-image.png" />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://jrclarkin.com/" />
+    <meta property="twitter:title" content="Jonathan Clarkin - Software Engineer & Technology Leader" />
+    <meta property="twitter:description" content="Software engineer passionate about testing, development, and building great products." />
+    <meta property="twitter:image" content="https://jrclarkin.com/og-image.png" />
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://jrclarkin.com/" />
+    
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Jonathan Clarkin",
+      "url": "https://jrclarkin.com",
+      "sameAs": [
+        "https://github.com/jclarkin"
+      ],
+      "jobTitle": "Software Engineer",
+      "description": "Software engineer passionate about testing, development, and building great products",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://jrclarkin.com"
+      }
+    }
+    </script>
+
+    <!-- CSS will be injected here during build -->
+    <link rel="stylesheet" crossorigin href="./assets/index-BloSC-H1.css">
+    
+    <!-- Redirect to SPA after SEO crawlers have read the content -->
+    <script>
+      // Only redirect if this is a user (not a crawler)
+      if (!/bot|crawler|spider|crawling/i.test(navigator.userAgent)) {
+        // Allow more time for crawlers to read homepage content
+        setTimeout(() => {
+          window.location.href = '/';
+        }, 200);
+      }
+    </script>
+  </head>
+  <body>
+    <!-- SEO-friendly content for crawlers -->
+    <div id="seo-content" style="max-width: 800px; margin: 0 auto; padding: 2rem; font-family: system-ui, sans-serif; line-height: 1.6;">
+      <header style="text-align: center; margin-bottom: 3rem;">
+        <h1 style="font-size: 2.5rem; margin-bottom: 0.5rem; color: #1a1a1a;">Jonathan Clarkin</h1>
+        <p style="font-size: 1.2rem; color: #666; margin-bottom: 1rem;">Software Engineer & Technology Leader</p>
+        <p style="color: #888;">Passionate about testing, development, and building great products</p>
+      </header>
+      
+      <main>
+        <section style="margin-bottom: 3rem;">
+          <h2 style="color: #333; border-bottom: 2px solid #eee; padding-bottom: 0.5rem;">About Me</h2>
+          <p>I'm a software engineer with experience in full-stack development, focusing on creating scalable and user-friendly applications. I have a particular passion for software testing, agile methodologies, and development practices that improve code quality and team productivity.</p>
+        </section>
+
+        <section style="margin-bottom: 3rem;">
+          <h2 style="color: #333; border-bottom: 2px solid #eee; padding-bottom: 0.5rem;">Recent Blog Posts</h2>
+          <div style="display: grid; gap: 1.5rem;">
+            ${postsHTML}
+          </div>
+          <p style="margin-top: 2rem;"><a href="https://jrclarkin.com/blog" style="color: #0066cc; text-decoration: none;">View all blog posts →</a></p>
+        </section>
+
+        <section>
+          <h2 style="color: #333; border-bottom: 2px solid #eee; padding-bottom: 0.5rem;">Links</h2>
+          <nav style="display: flex; gap: 2rem; flex-wrap: wrap;">
+            <a href="https://jrclarkin.com/blog" style="color: #0066cc; text-decoration: none;">Blog</a>
+            <a href="https://jrclarkin.com/tools" style="color: #0066cc; text-decoration: none;">Tools</a>
+            <a href="https://github.com/jclarkin" style="color: #0066cc; text-decoration: none;">GitHub</a>
+          </nav>
+        </section>
+      </main>
+    </div>
+    
+    <!-- SPA will load here for users -->
+    <div id="root"></div>
+    
+    <!-- JavaScript will be injected here during build -->
+    <script type="module" crossorigin src="./assets/index-CLxrZNyn.js"></script>
+
+    <style>
+      #seo-content article {
+        border: 1px solid #eee;
+        padding: 1.5rem;
+        border-radius: 8px;
+        background: #fafafa;
+      }
+      #seo-content article h3 {
+        margin: 0 0 0.5rem 0;
+        font-size: 1.1rem;
+      }
+      #seo-content article h3 a {
+        color: #333;
+        text-decoration: none;
+      }
+      #seo-content article h3 a:hover {
+        color: #0066cc;
+      }
+      #seo-content article .date {
+        font-size: 0.9rem;
+        color: #666;
+        margin: 0 0 1rem 0;
+      }
+      #seo-content article p:last-child {
+        margin-bottom: 0;
+      }
+    </style>
+  </body>
+</html>`;
+}
+
 export function generateBlogPages(distDir) {
   console.log('🔍 Generating SEO-friendly blog pages...');
+  
+  // Generate enhanced index.html
+  const indexHTML = generateIndexHTML();
+  fs.writeFileSync(path.join(distDir, 'index.html'), indexHTML);
+  console.log('✅ Generated: / (homepage)');
   
   // Create blog directory
   const blogDir = path.join(distDir, 'blog');
