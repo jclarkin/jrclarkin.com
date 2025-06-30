@@ -398,15 +398,22 @@ function generateIndexHTML() {
     <!-- CSS will be injected here during build -->
     <link rel="stylesheet" crossorigin href="./assets/index-BloSC-H1.css">
     
-    <!-- Redirect to SPA after SEO crawlers have read the content -->
+    <!-- SEO content will be hidden once React loads -->
     <script>
-      // Only redirect if this is a user (not a crawler)
-      if (!/bot|crawler|spider|crawling/i.test(navigator.userAgent)) {
-        // Allow more time for crawlers to read homepage content
-        setTimeout(() => {
-          window.location.href = '/';
-        }, 200);
-      }
+      // Hide SEO content after React app loads
+      document.addEventListener('DOMContentLoaded', function() {
+        // Wait for React to mount, then hide SEO content
+        setTimeout(function() {
+          const seoContent = document.getElementById('seo-content');
+          const root = document.getElementById('root');
+          if (root && root.children.length > 0) {
+            // React has loaded, hide SEO content
+            if (seoContent) {
+              seoContent.style.display = 'none';
+            }
+          }
+        }, 1000);
+      });
     </script>
   </head>
   <body>
