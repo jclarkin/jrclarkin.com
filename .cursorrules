@@ -1,0 +1,40 @@
+# Cursor Rules for jrclarkin.com
+
+## Git Commit Messages
+
+### Format
+- **One line only** - keep commits concise and focused
+- **Present tense** - "Add feature" not "Added feature" 
+- **Action-oriented** - start with a verb describing what the commit does
+- **No periods** at the end
+- **50 characters or less** for the subject line
+
+### Examples
+✅ Good:
+- `Add JSON viewer tool`
+- `Fix blog redirect URLs`
+- `Update homepage meta tags`
+- `Remove unused CSS classes`
+- `Refactor navigation component`
+
+❌ Avoid:
+- `Added a new JSON viewer tool for the tools section.`
+- `Fixed some bugs`
+- `Updates`
+- `WIP`
+- `Misc changes`
+
+### Common Verbs
+- `Add` - new features, files, or functionality
+- `Fix` - bug fixes
+- `Update` - modifications to existing features
+- `Remove` - deletion of code, files, or features  
+- `Refactor` - code restructuring without behavior changes
+- `Improve` - enhancements to existing functionality
+- `Optimize` - performance improvements
+
+### Scope (optional)
+When helpful, add scope in parentheses:
+- `Fix(blog): redirect URLs to use hash routing`
+- `Add(tools): JSON viewer component`
+- `Update(seo): meta tags for blog posts` 
