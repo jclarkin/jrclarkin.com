@@ -5,13 +5,14 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "npm run gravatar-to-favicon && npm run generate-sitemap && vite build",
+    "build": "npm run gravatar-to-favicon && npm run generate-sitemap && vite build && npm run generate-seo-pages",
     "build:dev": "vite build --mode development",
     "generate-sitemap": "node scripts/generate-sitemap.js",
+    "generate-seo-pages": "node scripts/generate-blog-pages.js",
     "gravatar-to-favicon": "node scripts/gravatar-to-favicon.js",
     "lint": "eslint .",
     "preview": "vite preview",
-    "deploy:static": "rm -rf ../assets ../index.html ../favicon.* ../robots.txt ../sitemap.xml ../CNAME ../llm.txt && cp -r dist/* ../",
+    "deploy:static": "rm -rf ../assets ../index.html ../favicon.* ../robots.txt ../sitemap.xml ../CNAME ../llm.txt ../blog ../tools && cp -r dist/* ../",
     "deploy": "npm run build && npm run deploy:static"
   },
   "dependencies": {

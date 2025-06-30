@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/png" href="../favicon.png" />
+    <link rel="icon" type="image/x-icon" href="../favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <!-- SEO Meta Tags -->
+    <title>Tools - Jonathan Clarkin</title>
+    <meta name="description" content="Useful tools and utilities for development and productivity." />
+    <meta name="keywords" content="Jonathan Clarkin, software engineer, developer, tools" />
+    <meta name="author" content="Jonathan Clarkin" />
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://jrclarkin.com/tools" />
+    <meta property="og:title" content="Tools - Jonathan Clarkin" />
+    <meta property="og:description" content="Useful tools and utilities for development and productivity." />
+    <meta property="og:image" content="https://jrclarkin.com/og-image.png" />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://jrclarkin.com/tools" />
+    <meta property="twitter:title" content="Tools - Jonathan Clarkin" />
+    <meta property="twitter:description" content="Useful tools and utilities for development and productivity." />
+    <meta property="twitter:image" content="https://jrclarkin.com/og-image.png" />
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://jrclarkin.com/tools" />
+    
+    <!-- CSS will be injected here during build -->
+    <link rel="stylesheet" crossorigin href="../assets/index-BloSC-H1.css">
+    
+    <!-- Redirect to SPA after SEO crawlers have read the content -->
+    <script>
+      // Only redirect if this is a user (not a crawler)
+      if (!/bot|crawler|spider|crawling/i.test(navigator.userAgent)) {
+        setTimeout(() => {
+          window.location.href = '//tools';
+        }, 100);
+      }
+    </script>
+  </head>
+  <body>
+    <!-- SEO-friendly content for crawlers -->
+    <div id="seo-content">
+      <header>
+        <h1>Tools</h1>
+        <p>Jonathan Clarkin - Software Engineer</p>
+      </header>
+      <main>
+        <p>Useful tools and utilities for development and productivity.</p>
+        <nav>
+          <a href="https://jrclarkin.com/">Home</a> |
+          <a href="https://jrclarkin.com/blog">Blog</a> |
+          <a href="https://jrclarkin.com/tools">Tools</a>
+        </nav>
+      </main>
+    </div>
+    
+    <!-- SPA will load here for users -->
+    <div id="root"></div>
+    
+    <!-- JavaScript will be injected here during build -->
+    <script type="module" crossorigin src="../assets/index-CLxrZNyn.js"></script>
+  </body>
+</html>
