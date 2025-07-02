@@ -1,47 +1,104 @@
-# Astro Starter Kit: Minimal
+# jrclarkin.com
 
-```sh
-npm create astro@latest -- --template minimal
+Jonathan Clarkin's personal website - a blog and portfolio showcasing thoughts on software engineering, testing, and development practices.
+
+## 🚀 Built With
+
+- **[Astro](https://astro.build/)** - Static site generator
+- **[Tailwind CSS](https://tailwindcss.com/)** - Utility-first CSS framework
+- **[TypeScript](https://www.typescriptlang.org/)** - Type-safe JavaScript
+
+## 📁 Project Structure
+
 ```
-
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/minimal)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/minimal)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/minimal/devcontainer.json)
-
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
-
-## 🚀 Project Structure
-
-Inside of your Astro project, you'll see the following folders and files:
-
-```text
-/
-├── public/
+jrclarkin.com/
+├── public/           # Static assets (images, favicon, etc.)
 ├── src/
-│   └── pages/
-│       └── index.astro
+│   ├── components/   # Reusable Astro components
+│   ├── content/      # Blog posts and content collections
+│   │   └── blog/     # Markdown blog posts
+│   ├── layouts/      # Page layouts
+│   ├── pages/        # File-based routing
+│   │   ├── blog/     # Blog pages
+│   │   └── tools/    # Developer tools section
+│   └── styles/       # Global CSS and Tailwind
 └── package.json
 ```
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+## 🛠️ Development
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+### Prerequisites
+- Node.js 18+ 
+- npm
 
-Any static assets, like images, can be placed in the `public/` directory.
+### Getting Started
 
-## 🧞 Commands
+```bash
+# Clone the repository
+git clone https://github.com/jclarkin/jrclarkin.com.git
+cd jrclarkin.com
 
-All commands are run from the root of the project, from a terminal:
+# Install dependencies
+npm install
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+# Start development server
+npm run dev
+```
 
-## 👀 Want to learn more?
+The site will be available at `http://localhost:4321`
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+### Available Commands
+
+| Command | Description |
+|---------|-------------|
+| `npm run dev` | Start development server |
+| `npm run build` | Build for production |
+| `npm run preview` | Preview production build locally |
+| `npm run astro check` | Run type checking |
+
+## 📝 Content Management
+
+### Adding Blog Posts
+
+1. Create a new `.md` file in `src/content/blog/`
+2. Add frontmatter with required fields:
+
+```yaml
+---
+title: "Your Post Title"
+description: "Brief description of the post"
+publishDate: 2024-01-15
+author: "Jonathan Clarkin"
+keywords: "optional, comma, separated, keywords"
+draft: false
+---
+```
+
+3. Write your content in Markdown
+4. Images should be placed in `public/images/` and referenced as `/images/filename.jpg`
+
+### Content Guidelines
+
+- Blog posts focus on software engineering, testing, agile development, and technology leadership
+- Use clear, descriptive titles and meta descriptions for SEO
+- Include relevant keywords in frontmatter
+- Keep posts professional but conversational in tone
+
+## 🚀 Deployment
+
+The site is automatically deployed to GitHub Pages via GitHub Actions when changes are pushed to the `main` branch.
+
+### Manual Deployment
+
+```bash
+npm run build
+# Upload dist/ folder to your hosting provider
+```
+
+## 🎨 Design System
+
+The site uses a minimal, professional design with:
+- Tailwind CSS for styling
+- Custom prose styles for blog content
+- Responsive design optimized for readability
+- Professional color scheme with blue accents
