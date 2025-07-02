@@ -1,79 +1,47 @@
-# Jonathan Clarkin - Personal Website
+# Astro Starter Kit: Minimal
 
-This is the source code for Jonathan Clarkin's personal website, built with React, TypeScript, Vite, and Tailwind CSS.
-
-## Tech Stack
-
-- **Frontend**: React 18 with TypeScript
-- **Build Tool**: Vite
-- **Styling**: Tailwind CSS with shadcn/ui components
-- **Routing**: React Router DOM
-- **State Management**: TanStack Query
-- **UI Components**: Radix UI primitives with shadcn/ui
-
-## Development
-
-### Prerequisites
-
-- Node.js 18+ 
-- npm or yarn
-
-### Setup
-
-1. Clone the repository
-2. Navigate to the `vite-src` directory
-3. Install dependencies:
-   ```bash
-   npm install
-   ```
-
-### Development Server
-
-Start the development server:
-
-```bash
-npm run dev
+```sh
+npm create astro@latest -- --template minimal
 ```
 
-The site will be available at `http://localhost:8080`
+[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/minimal)
+[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/minimal)
+[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/minimal/devcontainer.json)
 
-### Building for Production
+> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
 
-Build the project for production:
+## 🚀 Project Structure
 
-```bash
-npm run build
-```
+Inside of your Astro project, you'll see the following folders and files:
 
-Deploy the static files:
-
-```bash
-npm run deploy:static
-```
-
-This will copy the built files from `dist/` to the root directory for static hosting.
-
-## Project Structure
-
-```
-vite-src/
+```text
+/
+├── public/
 ├── src/
-│   ├── components/     # Reusable UI components
-│   ├── hooks/         # Custom React hooks
-│   ├── lib/           # Utility functions
-│   ├── pages/         # Page components
-│   ├── App.tsx        # Main app component
-│   ├── main.tsx       # App entry point
-│   └── index.css      # Global styles
-├── public/            # Static assets
-├── dist/              # Build output
-└── package.json       # Dependencies and scripts
+│   └── pages/
+│       └── index.astro
+└── package.json
 ```
 
-## Deployment
+Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
 
-The site is designed to be deployed as static files. After building, the contents of the `dist/` directory can be served by any static hosting service.
+There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
 
-## License
+Any static assets, like images, can be placed in the `public/` directory.
 
-Private - All rights reserved. 
+## 🧞 Commands
+
+All commands are run from the root of the project, from a terminal:
+
+| Command                   | Action                                           |
+| :------------------------ | :----------------------------------------------- |
+| `npm install`             | Installs dependencies                            |
+| `npm run dev`             | Starts local dev server at `localhost:4321`      |
+| `npm run build`           | Build your production site to `./dist/`          |
+| `npm run preview`         | Preview your build locally, before deploying     |
+| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
+| `npm run astro -- --help` | Get help using the Astro CLI                     |
+
+## 👀 Want to learn more?
+
+Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).

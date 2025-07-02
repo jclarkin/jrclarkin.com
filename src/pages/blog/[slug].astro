@@ -1,0 +1,61 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { getCollection } from 'astro:content';
+
+export async function getStaticPaths() {
+  const blogEntries = await getCollection('blog');
+  return blogEntries.map(entry => ({
+    params: { slug: entry.slug }, 
+    props: { entry },
+  }));
+}
+
+const { entry } = Astro.props;
+const { Content } = await entry.render();
+
+const formattedDate = entry.data.publishDate.toLocaleDateString('en-US', { 
+  year: 'numeric', 
+  month: 'long', 
+  day: 'numeric' 
+});
+---
+
+<Layout 
+  title={`${entry.data.title} - Jonathan Clarkin`}
+  description={entry.data.description}
+  keywords={entry.data.keywords}
+>
+  <article class="max-w-3xl mx-auto">
+    <!-- Back to blog link -->
+    <nav class="mb-6">
+      <a href="/blog" class="text-blue-600 hover:text-blue-800 transition-colors font-medium">
+        ← Back to Blog
+      </a>
+    </nav>
+
+    <!-- Article header -->
+    <header class="mb-8">
+      <h1 class="text-3xl font-bold text-gray-900 mb-3">{entry.data.title}</h1>
+      <div class="text-gray-600 mb-4">
+        <p>By Jonathan Clarkin | {formattedDate}</p>
+      </div>
+    </header>
+
+    <!-- Article content -->
+    <div class="prose prose-lg max-w-none">
+      <Content />
+    </div>
+
+    <!-- Footer navigation -->
+    <footer class="mt-12 pt-8 border-t border-gray-200">
+      <nav class="flex justify-between">
+        <a href="/blog" class="text-blue-600 hover:text-blue-800 transition-colors font-medium">
+          ← All Posts
+        </a>
+        <a href="/" class="text-blue-600 hover:text-blue-800 transition-colors font-medium">
+          Home →
+        </a>
+      </nav>
+    </footer>
+  </article>
+</Layout> 

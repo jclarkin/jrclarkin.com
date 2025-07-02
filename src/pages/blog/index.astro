@@ -1,0 +1,52 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import SiteHeader from '../../components/SiteHeader.astro';
+import LinksSection from '../../components/LinksSection.astro';
+import { getCollection } from 'astro:content';
+
+// Get all blog posts and sort by date (newest first)
+const allPosts = await getCollection('blog');
+const sortedPosts = allPosts.sort((a, b) => 
+  new Date(b.data.publishDate).getTime() - new Date(a.data.publishDate).getTime()
+);
+---
+
+<Layout 
+  title="Blog - Jonathan Clarkin"
+  description="Thoughts on technology, development, and the industry. Articles about software testing, agile methodologies, and development practices."
+>
+  <SiteHeader />
+  
+  <section>
+    <header class="mb-8">
+    <h1 class="text-3xl font-bold text-gray-900 mb-2">Blog</h1>
+    <p class="text-gray-600">Thoughts on technology, development, and the industry</p>
+  </header>
+
+  <div class="grid gap-6">
+    {sortedPosts.map((post) => (
+      <article class="border border-gray-200 rounded-lg p-6 bg-gray-50 hover:bg-gray-100 transition-colors">
+        <h2 class="text-xl font-semibold mb-2">
+          <a href={`/blog/${post.slug}`} class="text-gray-900 hover:text-blue-600 transition-colors">
+            {post.data.title}
+          </a>
+        </h2>
+        <p class="text-sm text-gray-500 mb-3">
+          {post.data.publishDate.toLocaleDateString('en-US', { 
+            year: 'numeric', 
+            month: 'long', 
+            day: 'numeric' 
+          })}
+        </p>
+        <p class="text-gray-700">{post.data.description}</p>
+      </article>
+    ))}
+  </div>
+
+  {sortedPosts.length === 0 && (
+    <p class="text-gray-500 text-center py-8">No blog posts yet. Check back soon!</p>
+  )}
+  </section>
+
+  <LinksSection />
+</Layout> 
