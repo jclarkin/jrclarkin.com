@@ -13,4 +13,4 @@ Allow: /
 User-agent: *
 Allow: /
 
-Sitemap: https://amhclarkin.com/sitemap.xml
+Sitemap: https://jrclarkin.com/sitemap-index.xml 
