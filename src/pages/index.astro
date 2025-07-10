@@ -1,22 +1,71 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import SiteHeader from '../components/SiteHeader.astro';
-import LinksSection from '../components/LinksSection.astro';
 ---
 
 <Layout 
   title="Jonathan Clarkin - Software Engineer & Technology Leader"
   description="Jonathan Clarkin's personal website. Software engineer passionate about testing, development, and building great products. Explore my blog posts on technology, development practices, and industry insights."
 >
-  <LinksSection />
-  <SiteHeader />
+  <!-- Background Gradient -->
+  <div class="fixed inset-0 -z-10 bg-gradient-to-br from-purple-50 via-blue-50 to-indigo-100"></div>
+  <div class="fixed inset-0 -z-10 bg-gradient-to-tr from-purple-100/30 via-transparent to-blue-100/30"></div>
 
-  <!-- About Section -->
-  <section class="mb-12">
-    <h2 class="text-2xl font-semibold mb-4 text-gray-800 border-b-2 border-gray-200 pb-2">About Me</h2>
-    <p class="text-gray-700 leading-relaxed">
-      I'm a software engineer with experience in full-stack development, focusing on creating scalable and user-friendly applications. 
-      I have a particular passion for software testing, agile methodologies, and development practices that improve code quality and team productivity.
-    </p>
-  </section>
+  <!-- Main Header & Navigation -->
+  <header class="text-center mb-16">
+    <!-- Navigation -->
+    <nav class="mb-12">
+      <div class="flex gap-8 justify-center items-center">
+        <a href="/" class="text-gray-700 hover:text-purple-600 transition-colors font-medium">Home</a>
+        <a href="/blog" class="text-gray-700 hover:text-purple-600 transition-colors font-medium">Blog</a>
+        <a href="/tools" class="text-gray-700 hover:text-purple-600 transition-colors font-medium">Tools</a>
+        <a href="https://www.linkedin.com/in/jonathanclarkin" class="text-gray-700 hover:text-purple-600 transition-colors font-medium" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+      </div>
+    </nav>
+
+    <!-- Personal Introduction -->
+    <div class="max-w-2xl mx-auto">
+      <h1 class="text-5xl font-bold mb-6 text-gray-900">Hi, I'm Jonathan 👋</h1>
+      <p class="text-xl text-gray-600 mb-4 leading-relaxed">
+        I'm a Staff Growth Engineer at Shopify, passionate about software testing, development, and building great products.
+      </p>
+      <p class="text-lg text-gray-500 leading-relaxed">
+        I focus on creating scalable applications, improving development practices, and helping teams build better software through effective testing and agile methodologies.
+      </p>
+    </div>
+  </header>
+
+  <!-- Content Sections -->
+  <div class="max-w-3xl mx-auto space-y-16">
+    
+    <!-- Current Focus -->
+    <section>
+      <h2 class="text-2xl font-semibold mb-6 text-gray-800">What I'm Working On</h2>
+      <div class="bg-white/80 backdrop-blur-sm rounded-xl p-6 shadow-lg border border-white/20">
+        <p class="text-gray-700 leading-relaxed mb-4">
+          Currently focused on growth engineering at Shopify, where I work on systems that help millions of merchants succeed. 
+          I'm particularly interested in the intersection of product development, engineering excellence, and user experience.
+        </p>
+        <p class="text-gray-700 leading-relaxed">
+          When I'm not coding, you'll find me writing about software testing practices, exploring new development tools, 
+          or sharing insights about building resilient software systems.
+        </p>
+      </div>
+    </section>
+
+    <!-- Quick Links -->
+    <section>
+      <h2 class="text-2xl font-semibold mb-6 text-gray-800">Explore</h2>
+      <div class="grid md:grid-cols-2 gap-6">
+        <a href="/blog" class="group block p-6 bg-white/80 backdrop-blur-sm border border-white/20 rounded-xl hover:bg-white/90 hover:shadow-lg transition-all hover:scale-105">
+          <h3 class="text-lg font-semibold text-gray-900 group-hover:text-purple-600 mb-2">Blog Posts</h3>
+          <p class="text-gray-600">Thoughts on technology, development practices, and industry insights.</p>
+        </a>
+        <a href="/tools" class="group block p-6 bg-white/80 backdrop-blur-sm border border-white/20 rounded-xl hover:bg-white/90 hover:shadow-lg transition-all hover:scale-105">
+          <h3 class="text-lg font-semibold text-gray-900 group-hover:text-purple-600 mb-2">Developer Tools</h3>
+          <p class="text-gray-600">Useful utilities and tools for development and productivity.</p>
+        </a>
+      </div>
+    </section>
+
+  </div>
 </Layout>
