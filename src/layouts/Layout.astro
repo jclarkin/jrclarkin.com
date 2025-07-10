@@ -52,8 +52,7 @@ const currentUrl = canonicalUrl || new URL(Astro.url.pathname, Astro.site).href;
     <link rel="canonical" href={currentUrl} />
     
     <!-- Structured Data -->
-    <script type="application/ld+json" is:inline>
-    {
+    <script type="application/ld+json" set:html={JSON.stringify({
       "@context": "https://schema.org",
       "@type": "Person",
       "name": "Jonathan Clarkin",
@@ -67,13 +66,23 @@ const currentUrl = canonicalUrl || new URL(Astro.url.pathname, Astro.site).href;
         "@type": "WebPage",
         "@id": currentUrl
       }
-    }
-    </script>
+    })} />
 
   </head>
-  <body class="min-h-screen bg-white text-gray-900 font-sans">
-    <main class="max-w-4xl mx-auto px-4 py-8">
+  <body class="min-h-screen bg-white text-gray-900 font-sans flex flex-col">
+    <main class="flex-1 max-w-4xl mx-auto px-4 py-8">
       <slot />
     </main>
+    
+    <!-- Footer -->
+    <footer class="border-t border-gray-200 py-6">
+      <div class="max-w-4xl mx-auto px-4 flex justify-between items-center">
+        <p class="text-gray-600 text-sm">Copyright J. Clarkin, 2025</p>
+        <a href="#" onclick="window.scrollTo({top: 0, behavior: 'smooth'}); return false;" 
+           class="text-blue-600 hover:text-blue-800 transition-colors font-medium text-sm">
+          To the top
+        </a>
+      </div>
+    </footer>
   </body>
 </html> 

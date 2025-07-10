@@ -1,5 +1,6 @@
 ---
 import Layout from '../../layouts/Layout.astro';
+import LinksSection from '../../components/LinksSection.astro';
 import { getCollection } from 'astro:content';
 
 export async function getStaticPaths() {
@@ -25,6 +26,8 @@ const formattedDate = entry.data.publishDate.toLocaleDateString('en-US', {
   description={entry.data.description}
   keywords={entry.data.keywords}
 >
+  <LinksSection />
+  
   <article class="max-w-3xl mx-auto">
     <!-- Back to blog link -->
     <nav class="mb-6">
