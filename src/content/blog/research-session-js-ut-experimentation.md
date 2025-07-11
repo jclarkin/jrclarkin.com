@@ -1,22 +1,36 @@
 ---
-title: "Research Session - JS UT Experimentation"
+title: "JavaScript Unit Testing Framework Evaluation"
 publishDate: 2014-03-21
-description: "Detailed experimentation with JavaScript unit testing libraries including Chai.js, Mocha, and Jasmine, with recommendations for TDD and BDD approaches..."
+description: "Comprehensive evaluation of JavaScript unit testing frameworks including Chai.js, Mocha, Jasmine, and QUnit with practical recommendations for team adoption."
+keywords: "JavaScript unit testing, Chai.js, Mocha, Jasmine, QUnit, test frameworks, TDD, BDD, Sinon.js, testing tools"
 ---
 
-**Recommend starting with Chai.js + Mocha, and Sinon.js for mocking when necessary.**
+**Bottom line**: Start with Chai.js + Mocha, add Sinon.js for mocking when needed.
 
-A lot of the test libraries available are similar, so it is hard to go wrong. Chai.js appears to be commonly used and also integrated into larger frameworks. Since Chai is just a test authoring library, there is still need for a tool to execute the tests. For current needs, Mocha has good support and a lot of reporting output options. At this point, the added benefits provided by theintern.io do not add immediate value for me, but transitioning to it from Mocha should not be difficult.
+After extensive experimentation with JavaScript testing frameworks, the landscape offers many solid options. Chai.js stands out for its widespread adoption and integration capabilities. Since Chai handles assertions but not test execution, Mocha provides excellent test running with extensive reporting options.
 
-## Further analysis plans
+## Key Findings
 
-- Look into Test Runner outputs and how they might integrate into JUnit reports
+**Framework Similarities**: Most testing libraries share core concepts, making it difficult to choose poorly. The real differences emerge in community support, integration capabilities, and developer experience.
 
-Simplistic examples created during experimentation can be found on Github here.
+**Chai + Mocha Combination**: 
+- Chai's assertion library integrates well with larger frameworks
+- Mocha offers comprehensive reporting outputs
+- Together they provide flexibility for both TDD and BDD approaches
+
+**Future Considerations**: Tools like theintern.io show promise but don't add immediate value for basic unit testing needs. The good news: transitioning from Mocha shouldn't be difficult when more advanced features become necessary.
+
+## Next Investigation Areas
+
+- Test runner output formats and JUnit report integration
+- Continuous integration workflow optimization
+- Code coverage reporting integration
+
+*Detailed session notes and examples available in the project repository.*
 
 ---
 
-## Session notes below the fold…
+## Rough Session Notes
 
 **Mission**: Attempt to create JSUT (Javascript Unit Test) using simple libraries
 
@@ -39,7 +53,7 @@ Simplistic examples created during experimentation can be found on Github here.
 - **Learn:** Found these cool chai.js plugins that could be useful: helpers for statistics, jquery, http processing, and more
 - **Learn:** Found this article to help me out
 - **Success:** After much initial confusion, I have successfully authored some simple tests that I can run via HTML in a browser
-- **Learn:** Visit from @snocorp has convinced me that it is silly to ignore BDD due to historic corporate aversion to change Increasing the charter to include BDD experimentation
+- **Learn:** Visit from Dave Sewell has convinced me that it is silly to ignore BDD due to historic corporate aversion to change Increasing the charter to include BDD experimentation
 - **Experiment:** Create a BDD version of the chai-mocha tests
 - **Fail:** Trouble getting the 'throw' scenario to work… Trying a success and fail case to ensure my understanding…
 - **Success:** Added test cases for both throw and not throw to ensure understanding

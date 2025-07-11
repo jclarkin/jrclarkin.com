@@ -1,19 +1,29 @@
 ---
-title: "Classification of Software Features"
-description: "I typically hear two categories for software features: internal and external. Occasionally, from the development side, I hear of a third option: deprecated. I am proposing a fourth category..."
+title: "The Hidden Category: Vestigial Software Features"
+description: "Beyond external, internal, and deprecated features lies a fourth category that plagues enterprise software: vestigial features whose purpose and value remain a mystery."
 publishDate: 2014-04-25
 author: "Jonathan Clarkin"
+keywords: "software features, technical debt, enterprise software, feature classification, vestigial features, software maintenance"
 ---
 
-I typically hear two categories for software features: internal and external. Occasionally, from the development side, I hear of a third option: deprecated. I am proposing a fourth category, that I often find in enterprise software that I would call *vestigial*.
+Most software features fall into familiar categories: external (customer-facing) and internal (operational). Developers often add a third: deprecated (marked for removal). But enterprise software has taught me there's a fourth category that deserves recognition: **vestigial features**.
 
-Here are my four categories defined:
+## The Four Categories Defined
 
-- **External Feature**: These are solutions for customer needs. They should produce value to the buyers of the software.
-- **Internal Features**: These are solutions for the company that produces the software. They reduce costs of maintaining and improving the software.
-- **Deprecated Features**: These are solutions once targeted internally or externally that are known to no longer produce significant value to keep. The are technical debt that is clearly flagged for removal.
-- **Vestigial Features**: These are a mystery. They likely were once solutions to someone, or at least intended to be so. Their current value is unknown and cannot be flagged for deprecation. They are technical debt with no mitigation strategy.
+**External Features** solve customer problems and create value for software buyers. They justify the product's existence.
 
-A *vestigial feature* is like the human appendix: maybe we don't need it anymore, but it remains part of our ecosystem. The tonsils were once vestigial until we learned more about them and determined their value.
+**Internal Features** solve company problems, reducing maintenance costs and improving development efficiency.
 
-Does your enterprise software have many vestigial features? We can form a test strategy to determine their original intent, their current uses, and estimate their value. 
+**Deprecated Features** are former solutions - internal or external - that no longer provide significant value. They're technical debt with a clear removal plan.
+
+**Vestigial Features** are mysteries. They likely solved someone's problem once, or were intended to. Their current value is unknown, and they can't be confidently flagged for removal. They represent technical debt with no mitigation strategy.
+
+## The Biological Parallel
+
+Like the human appendix, vestigial features persist in our software ecosystem long after their original purpose becomes unclear. Medical science once considered tonsils vestigial until research revealed their immune system role. Similarly, software features might serve purposes we've forgotten or never documented.
+
+## The Enterprise Reality
+
+Enterprise software accumulates vestigial features through acquisitions, staff turnover, incomplete documentation, and evolving requirements. Each represents a small maintenance burden and testing complexity that compounds over time.
+
+**The testing opportunity:** We can design investigations to uncover vestigial features' original intent, current usage, and business value. Sometimes we'll discover hidden gems; other times we'll find safe candidates for removal. 

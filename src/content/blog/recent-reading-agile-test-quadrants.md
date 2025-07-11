@@ -1,20 +1,35 @@
 ---
-title: "Recent Reading - Agile Test Quadrants"
-description: "A coworker recently shared with me this SlideShare presentation from ThoughtWorks. I had never seen the Agile Testing Quadrants model by Brian Marick..."
+title: "Discovering the Agile Testing Quadrants"
+description: "How Brian Marick's Agile Testing Quadrants model provides a framework for communicating different types of testing and countering the 'automate everything' fallacy."
 publishDate: 2014-07-25
 author: "Jonathan Clarkin"
+keywords: "Agile Testing Quadrants, Brian Marick, testing strategy, test automation, exploratory testing, sapient testing, testing communication"
 ---
 
-A coworker recently shared with me this SlideShare presentation from ThoughtWorks.
+A coworker shared a ThoughtWorks SlideShare presentation that introduced me to Brian Marick's Agile Testing Quadrants model - a framework I'd never encountered before but found compelling.
 
-I had never seen the Agile Testing Quadrants model by Brian Marick, but I believe it will be useful in helping me communicate types of testing to the teams. There is currently an attitude forming that "We can test everything via automation. Programmers can test it all, with more code" which is fallacious, but change takes time. I am hoping that exposing people to different models and ideas will help accelerate understanding my perspective on the value of sapient testing.
+## The Communication Challenge
 
-Here is the diagram I am referencing
+Our team is developing a problematic attitude: "We can test everything via automation. Programmers can test it all with more code." This perspective, while understandable, misses the nuanced reality of effective testing.
+
+The Agile Testing Quadrants provide a visual framework for communicating why different types of testing serve different purposes:
 
 ![Agile Testing Quadrants Model by Brian Marick showing the four quadrants of testing](/images/Agile-Testing-Quadrants.png)
 
-I now have a new book added to my To Do list: *Agile Testing: A Practical Guide for Testers and Agile Teams*
+## Why This Matters
 
-![Agile Testing: A Practical Guide for Testers and Agile Teams book cover](/images/BookAgileTesting.jpg)
+Each quadrant represents testing with different goals:
+- **Technology-facing tests that support development** (unit tests, component tests)
+- **Business-facing tests that support development** (functional tests, story tests)  
+- **Technology-facing tests that critique the product** (performance, security tests)
+- **Business-facing tests that critique the product** (exploratory, usability tests)
 
-Hopefully it will add even more tools to my belt for both testing software, and teaching about testing to developers. 
+This model helps explain why automation excels in some quadrants while human judgment remains irreplaceable in others.
+
+## Next Steps
+
+I've added *Agile Testing: A Practical Guide for Testers and Agile Teams* to my reading list:
+
+<img src="/images/BookAgileTesting.png" alt="Agile Testing: A Practical Guide for Testers and Agile Teams book cover" width="300" />
+
+Exposing teams to models like this should help accelerate understanding of human testing's value. Change takes time, but clear frameworks make the conversation more productive. 

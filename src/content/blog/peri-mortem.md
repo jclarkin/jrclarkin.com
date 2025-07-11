@@ -1,75 +1,184 @@
 ---
-title: "Planning For My Departure"
-description: "I have experienced the departure of many colleagues at Mxi, and each time it has been emotional and stressful. Now it is my turn to leave..."
+title: "The Peri-Mortem: How to Plan Your Departure and Strengthen Your Team"
+description: "Learn how to conduct a 'peri-mortem' meeting before leaving a team to minimize stress, identify knowledge gaps, and ensure smooth transitions. A proactive approach to departure planning that benefits everyone."
 publishDate: 2015-02-19
 author: "Jonathan Clarkin"
 ---
 
-I have experienced the departure of many colleagues at Mxi, and each time it has been emotional and stressful. Now it is my turn to leave. I wanted to minimize that same gut-punch to my friends and team. So, like Tom Sawyer, I was able to attend my own funeral. The weirdest part was that I played the role of meeting coordinator, in discussing the aftermath of my departure.
+Planning your departure from a team is rarely comfortable, but it doesn't have to be traumatic. After witnessing the emotional and operational chaos that often follows when colleagues leave, I decided to try something different: conducting my own "peri-mortem" meeting while I was still there to help solve the problems my departure would create.
 
-## The Agenda
+## What is a Peri-Mortem?
 
-As with any retrospective or post-mortem, it is important to have a skeleton of the meeting, to set expectations for attendees. Here was our plan:
+A **peri-mortem** is a proactive meeting where the team imagines that an undesired future state has already occurred and works backwards to identify what problems led to that outcome. Unlike a traditional post-mortem (conducted after something has gone wrong), a peri-mortem allows you to surface and solve potential issues before they actually occur. In this case, we're applying the technique to the challenges of operating with reduced team capacity due to departures.
 
-- What does Jonathan do on the team?
-- Which skills or roles will the team need to support?
-- If the team is to hire a new member, what depicts this ideal candidate?
-- What other stressors are caused by Jonathan's departure, and how can we decrease them?
+**Key Benefits:**
+- Surfaces hidden knowledge and responsibilities
+- Reduces team anxiety through proactive planning
+- Creates actionable transition roadmaps
+- Minimizes business disruption
+- Strengthens team resilience
 
-## Judgement Day
+## Planning the Peri-Mortem Meeting
 
-After some levity about the awkwardness of this meeting, the first activity began. Each team member wrote down the things they believe I had been doing on the team. I was to not participate in this ideation, forcing everyone else to reflect on my visible and invisible roles.
+### Essential Agenda Items
+
+Structure your peri-mortem around these four critical questions:
+
+1. **Role Inventory**: What does the departing person actually do on the team?
+2. **Impact Assessment**: Which skills or roles are most critical to maintain?
+3. **Replacement Profile**: What would the ideal replacement look like?
+4. **Stress Mitigation**: What other challenges will the departure create, and how can we address them?
+
+### Meeting Guidelines
+
+- **Duration**: 2-3 hours for thorough discussion
+- **Facilitator**: Ideally someone other than the departing person
+- **Participants**: Core team members plus key stakeholders
+- **Documentation**: Assign someone to capture insights and action items
+
+## The Peri-Mortem Process
+
+### Step 1: Role Discovery Exercise
+
+Begin with a collaborative brainstorming session where team members identify all the responsibilities, both visible and invisible, that the departing person handles.
+
+**Facilitation Tips:**
+- Have the departing person remain silent during initial brainstorming
+- Use sticky notes or digital collaboration tools
+- Group similar items together
+- Don't edit or judge suggestions initially
 
 ![Team brainstorming session](/images/PeriMortem-Team.jpg)
 
-The team came up with a pretty comprehensive list of my roles and responsibilities. Some things I expected to see, some I didn't. It was great to see that I had been doing a good job of making my contributions visible to the team.
+**Common Hidden Roles That Emerge:**
+- Informal mentoring and knowledge sharing
+- Cross-team relationship management
+- Process improvements and innovation
+- Cultural maintenance and team morale
+- Specialized technical knowledge or domain expertise
 
-## Skills and Roles
+### Step 2: Prioritize Critical Functions
 
-Next, we discussed which of these skills and roles the team would need to continue supporting after my departure. This helped prioritize what was most critical to address.
+Not every responsibility needs immediate replacement. Work together to identify which functions are:
+
+- **Mission-critical**: Must be covered immediately
+- **Important**: Should be addressed within 30-60 days
+- **Nice-to-have**: Can be redistributed or eliminated
 
 ![Skills discussion](/images/PeriMortem-Skills.jpg)
 
-The team identified several key areas where my departure would create gaps:
+### Step 3: Define the Ideal Replacement
 
-- Test automation strategy and implementation
-- Mentoring junior team members
-- Cross-team collaboration and communication
-- Process improvement initiatives
+Create a comprehensive profile of what you're looking for, including:
 
-## The Ideal Replacement
+**Technical Skills:**
+- Required technical competencies
+- Preferred certifications or experience levels
+- Tool-specific knowledge
 
-We then brainstormed what the ideal replacement candidate would look like. This wasn't just about technical skills, but also about personality traits and working style that would fit well with the team.
+**Soft Skills:**
+- Communication style that fits the team
+- Learning orientation and adaptability
+- Cultural fit indicators
+
+**Growth Potential:**
+- Areas where the role could evolve
+- Opportunities for the person to expand the position
 
 ![Skills refined discussion](/images/PeriMortem-SkillsRefined.jpg)
 
-## Addressing Stressors
+### Step 4: Address Broader Stressors
 
-Finally, we discussed the broader stressors that my departure might cause and how to mitigate them. This included both immediate tactical concerns and longer-term strategic considerations.
+Departures create ripple effects beyond just the immediate role gap. Discuss:
+
+- **Team morale concerns**
+- **Workload redistribution challenges**
+- **Client or stakeholder relationship impacts**
+- **Timeline and deadline implications**
+- **Budget considerations for hiring and training**
 
 ![Stressors discussion](/images/PeriMortem-Stressors.jpg)
 
-## The Satir Change Model
+## Understanding Change Dynamics
 
-Throughout this process, I kept thinking about the Satir Change Model and how teams go through predictable stages when dealing with change. Understanding this helped frame our discussions in a more constructive way.
+### The Satir Change Model in Team Transitions
+
+Virginia Satir's Change Model helps frame what teams experience during transitions:
+
+1. **Late Status Quo**: Current state with the departing person
+2. **Resistance**: Initial reaction to announced departure
+3. **Chaos**: Period of adjustment and uncertainty
+4. **Integration**: Team adapts and finds new rhythms
+5. **New Status Quo**: Stabilized state with new structure
 
 ![Satir Change Model](/images/PeriMortem-Satir.png)
 
-## Final Discussions
+Understanding this model helps teams:
+- Normalize the discomfort of transition periods
+- Plan support during the chaos phase
+- Set realistic expectations for stabilization
 
-The meeting concluded with some great discussions about how to ensure a smooth transition and maintain team morale during the change.
+## Creating Your Action Plan
+
+### Immediate Actions (First 30 Days)
+
+- **Knowledge transfer sessions** with documented outcomes
+- **Shadow rotations** for critical responsibilities
+- **Stakeholder notifications** with transition timelines
+- **Process documentation** for key workflows
+
+### Medium-term Actions (30-90 Days)
+
+- **Recruitment strategy** with defined timeline
+- **Interim coverage plans** for critical functions
+- **Team restructuring** if needed
+- **Tool or system access transitions**
+
+### Long-term Considerations (90+ Days)
+
+- **New hire onboarding** and integration planning
+- **Process improvements** based on transition learnings
+- **Team development** to build resilience
+- **Knowledge management** system enhancements
+
+## Measuring Success
+
+### Key Indicators of Effective Peri-Mortem Planning
+
+- **Reduced time-to-productivity** for replacement hires
+- **Minimal service disruption** during transition periods
+- **Maintained team morale** throughout the change
+- **Improved knowledge documentation** as a lasting benefit
+- **Enhanced team adaptability** for future changes
 
 ![Final discussions](/images/PeriMortem-Discussions.jpg)
 
-## Reflections
+## Final Reflections and Recommendations
 
-This "peri-mortem" approach was incredibly valuable. It allowed us to:
+The peri-mortem approach transformed what could have been a stressful departure into a collaborative planning exercise that ultimately strengthened the team.
 
-1. **Surface hidden assumptions** about my role on the team
-2. **Plan proactively** for the transition instead of reactively
-3. **Reduce anxiety** by addressing concerns openly
-4. **Create a roadmap** for hiring and knowledge transfer
+### Key Takeaways
 
-I'd highly recommend this approach to anyone planning a departure from a team. It's much better to have these conversations while you're still there to participate in the solutions.
+1. **Surface the invisible**: Teams often underestimate the full scope of someone's contributions
+2. **Plan proactively**: Addressing concerns before they become problems reduces stress for everyone
+3. **Create dialogue**: Open discussions about change help teams process emotions constructively
+4. **Build documentation**: Use the departure as an opportunity to improve knowledge sharing
+5. **Strengthen the team**: Focus on how the transition can make the team more resilient
 
-The experience also reinforced for me how important it is to make your contributions visible and to actively develop others on your team. The best legacy you can leave is a team that's stronger and more capable because of your time with them. 
+### Recommended Frequency
+
+Consider peri-mortem practices for:
+- **Planned departures** (resignations, retirements, transfers)
+- **Extended leaves** (parental leave, sabbaticals, medical leave)
+- **Role changes** within the organization
+- **Project transitions** where key contributors are moving on
+
+### The Leadership Opportunity
+
+For managers and team leaders, facilitating peri-mortems demonstrates:
+- **Emotional intelligence** in handling transitions
+- **Strategic thinking** about team resilience
+- **Commitment to team development** beyond immediate needs
+- **Investment in knowledge management** and organizational learning
+
+The best legacy you can leave is a team that's stronger and more capable because of your time with them. The peri-mortem process helps your departure become a catalyst for growth rather than a source of disruption. 

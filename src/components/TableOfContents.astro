@@ -1,0 +1,220 @@
+---
+interface Props {
+  headings: { depth: number; slug: string; text: string }[];
+}
+
+const { headings } = Astro.props;
+
+// Filter to only show h2 and h3 headings for a cleaner TOC
+const filteredHeadings = headings.filter(heading => heading.depth <= 3);
+---
+
+{filteredHeadings.length > 0 && (
+  <aside class="toc-container">
+    <div class="toc-sticky">
+      <h2 class="toc-title">Table of Contents</h2>
+      <nav class="toc-nav">
+        <ul class="toc-list">
+          {filteredHeadings.map((heading) => (
+            <li class={`toc-item toc-depth-${heading.depth}`}>
+              <a 
+                href={`#${heading.slug}`}
+                class="toc-link"
+                data-heading={heading.slug}
+              >
+                {heading.text}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </nav>
+    </div>
+  </aside>
+)}
+
+<style>
+  .toc-container {
+    display: none;
+    position: relative;
+    width: 280px;
+    flex-shrink: 0;
+  }
+
+  @media (min-width: 1024px) {
+    .toc-container {
+      display: block;
+    }
+  }
+
+  @media (min-width: 1280px) {
+    .toc-container {
+      width: 320px;
+    }
+  }
+
+  .toc-sticky {
+    position: sticky;
+    top: 2rem;
+    padding: 1.5rem;
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 12px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    max-height: calc(100vh - 4rem);
+    overflow-y: auto;
+  }
+
+  .toc-title {
+    margin: 0;
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: #111827;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid #e5e7eb;
+  }
+
+  .toc-nav {
+    font-size: 0.875rem;
+  }
+
+  .toc-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .toc-item {
+    margin-bottom: 0.25rem;
+  }
+
+  .toc-depth-2 {
+    margin-left: 0;
+  }
+
+  .toc-depth-3 {
+    margin-left: 1rem;
+  }
+
+  .toc-link {
+    display: block;
+    padding: 0.25rem 0.5rem;
+    color: #4b5563;
+    text-decoration: none;
+    border-radius: 0.375rem;
+    transition: all 0.2s ease-in-out;
+    line-height: 1.4;
+  }
+
+  .toc-link:hover {
+    color: #9333ea;
+    background-color: #faf5ff;
+    text-decoration: none;
+  }
+
+  .toc-link.active {
+    color: #9333ea;
+    background-color: #faf5ff;
+    font-weight: 500;
+  }
+
+  /* Custom scrollbar for the TOC */
+  .toc-sticky::-webkit-scrollbar {
+    width: 4px;
+  }
+
+  .toc-sticky::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  .toc-sticky::-webkit-scrollbar-thumb {
+    background: rgba(139, 92, 246, 0.3);
+    border-radius: 2px;
+  }
+
+  .toc-sticky::-webkit-scrollbar-thumb:hover {
+    background: rgba(139, 92, 246, 0.5);
+  }
+</style>
+
+<script>
+  function initializeTableOfContents() {
+    const tocLinks = document.querySelectorAll('.toc-link');
+    const headings = document.querySelectorAll('h1, h2, h3, h4, h5, h6');
+    
+    if (!tocLinks.length || !headings.length) return;
+
+    // Create an intersection observer to track visible headings
+    const observer = new IntersectionObserver((entries) => {
+      let activeHeading: HTMLElement | null = null;
+      
+      // Find the heading that's most visible
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          activeHeading = entry.target as HTMLElement;
+        }
+      });
+
+      // Update active state
+      if (activeHeading) {
+        const heading = activeHeading as HTMLElement;
+        if (heading.id) {
+          const activeId = heading.id;
+          
+          // Remove active class from all links
+          tocLinks.forEach(link => link.classList.remove('active'));
+          
+          // Add active class to current link
+          const activeLink = document.querySelector(`[data-heading="${activeId}"]`);
+          if (activeLink) {
+            activeLink.classList.add('active');
+          }
+        }
+      }
+    }, {
+      rootMargin: '-20% 0% -80% 0%', // Trigger when heading is in the top 20% of viewport
+      threshold: 0
+    });
+
+    // Observe all headings
+    headings.forEach(heading => {
+      if (heading.id) {
+        observer.observe(heading);
+      }
+    });
+
+    // Add smooth scroll behavior to TOC links
+    tocLinks.forEach(link => {
+      link.addEventListener('click', (e) => {
+        e.preventDefault();
+        const targetId = link.getAttribute('href')?.substring(1);
+        const targetElement = document.getElementById(targetId || '');
+        
+        if (targetElement) {
+          const headerOffset = 80; // Account for any fixed headers
+          const elementPosition = targetElement.offsetTop;
+          const offsetPosition = elementPosition - headerOffset;
+
+          window.scrollTo({
+            top: offsetPosition,
+            behavior: 'smooth'
+          });
+
+          // Update URL without jumping
+          history.pushState(null, '', `#${targetId}`);
+        }
+      });
+    });
+  }
+
+  // Initialize when DOM is loaded
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initializeTableOfContents);
+  } else {
+    initializeTableOfContents();
+  }
+
+  // Re-initialize if navigating in SPA-style apps
+  document.addEventListener('astro:page-load', initializeTableOfContents);
+</script> 

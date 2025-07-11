@@ -1,66 +1,229 @@
 ---
-title: "JavaScript Unit Testing"
-description: "A comprehensive report on JavaScript unit testing tools and techniques, covering authoring checks, executing scripts, and reporting results..."
+title: "JavaScript Unit Testing: Tools, Techniques, and Best Practices"
+description: "A comprehensive guide to JavaScript unit testing covering test authoring, test runners, and reporting using tools available in 2014 including Mocha, Chai, QUnit, and Jasmine."
 publishDate: 2014-04-11
 author: "Jonathan Clarkin"
 ---
 
-*Note: The recommendations I make in this report are specific to the contextual needs of my current team. Your mileage may vary 😊*
+Effective JavaScript unit testing requires understanding three core components: test authoring (writing the tests), test execution (running them), and result reporting (displaying outcomes). This guide explores the current landscape of JavaScript testing tools and provides practical recommendations for teams getting started.
 
-## Summary
+## Executive Summary
 
-The goal of this research was to determine tools and techniques to empower developers in unit testing JavaScript applications. The research discovered that there are three distinct aspects of JS unit testing:
+JavaScript unit testing involves three distinct but interconnected areas:
 
-- Authoring checks: the means of writing the unit tests
-- Executing scripts: the frameworks that execute the checks
-- Reporting: displaying the execution results in a consistent and valued format
+- **Test Authoring**: Writing clear, maintainable test cases using assertion libraries
+- **Test Execution**: Running tests efficiently using test runners  
+- **Result Reporting**: Displaying results in formats useful for development and CI
 
-For authoring, the recommendation is to use the Chai.js library and to write checks in a behaviour driven development (BDD) format. For execution, the recommendation is to use Mocha as it has the most versatility to integrate into an existing Continuous Integration (CI) system. For reporting, the recommendation is to either use SonarQube if looking for tracking history and other code quality metrics, or to create a custom reporter that suits the team's needs.
+**Quick Recommendations:**
+- **For test authoring**: Chai.js provides excellent flexibility for both TDD and BDD styles
+- **For test execution**: Mocha offers the best balance of features and CI integration
+- **For reporting**: Focus on TAP or XUnit XML formats for CI compatibility
 
-## Authoring Checks
+## Test Authoring: Writing Effective Unit Tests
 
-As is typical in the JavaScript world, given any one need there exists many similar libraries and frameworks to solve the problem. This remains true for unit test helpers. To further conflate selection, some libraries offer both authorship and execution in a single framework.
+### Testing Styles: TDD vs BDD
 
-The largest dichotomy between library selections is the supported writing style: do you want checks to be written as asserts (typically labelled at TDD for Test Driven Development) or as describing behaviour (BDD). Assertions are the more traditional pattern, but behavioural is more readable enabling increased visibility of risk to Product Owners and Business Analysts.
+JavaScript testing libraries typically support two distinct writing styles:
 
-**Code Sample 1: TDD Style Unit Testing**
+**Test-Driven Development (TDD) Style:**
 ```javascript
+// Traditional assertion style
 assert.equal(calculator.add(2, 3), 5);
 assert.equal(calculator.subtract(5, 2), 3);
+assert.isTrue(user.isValid());
 ```
 
-**Code Sample 2: BDD Style Unit Testing**
+**Behavior-Driven Development (BDD) Style:**
 ```javascript
+// More descriptive, readable style
 expect(calculator.add(2, 3)).to.equal(5);
 expect(calculator.subtract(5, 2)).to.equal(3);
+expect(user.isValid()).to.be.true;
 ```
 
-The selection of authoring tools should be based on the team's comfort level with the writing style, and the ability to integrate with existing execution frameworks. For similar reasons as the selection of authoring tools, **Chai.js** is recommended. It is well supported, and it would easy to port a solution to another authoring library if ever needed.
+### Why Consider BDD Style?
 
-## Executing Scripts
+While our team has traditionally used TDD approaches, BDD-style tests offer several advantages worth considering:
 
-Test executors have a server based aspect (like running on a Node.js server), as well as browser based execution. The authoring of a browser executor should be intuitive for developers.
+- **Improved readability** for non-technical stakeholders
+- **Better error messages** when tests fail
+- **More intuitive syntax** for complex assertions
+- **Enhanced collaboration** between developers, testers, and business analysts
 
-For integrating to a system, it must support command-line execution, and offer outputs that can be fed to a reporting solution.
+### Assertion Library Options
 
-**Code Sample 3: Mocha Test Executor**
+**Chai.js** - Flexible assertion library supporting both TDD and BDD styles
+- Extensive API with clear documentation
+- Pluggable architecture for custom assertions
+- Good browser and Node.js compatibility
+- Active community and regular updates
+
+**Built-in Node.js assertions** - Simple, no-dependency option
+- Basic but sufficient for straightforward testing
+- No additional library dependencies
+- Limited expressiveness compared to dedicated libraries
+
+**QUnit assertions** - jQuery Foundation's testing assertions
+- Simple, straightforward API
+- Good integration with QUnit test runner
+- Limited flexibility for complex scenarios
+
+## Test Execution: Running Your Tests
+
+### Test Runner Comparison
+
+**Mocha**
+- **Strengths**: Flexible architecture, extensive reporting options, good CI integration
+- **Reporting formats**: TAP, JSON, XUnit XML, HTML, and more
+- **Asynchronous support**: Excellent callback and promise handling
+- **Browser compatibility**: Works in both Node.js and browser environments
+- **Best for**: Teams needing flexible configuration and good CI integration
+
+**QUnit**
+- **Strengths**: Simple setup, clear browser-based test runner, stable and mature
+- **Reporting**: Built-in HTML runner with clear visual feedback
+- **Integration**: Some CI integration possible but requires custom setup
+- **Best for**: Simple browser-based testing, teams familiar with jQuery ecosystem
+
+**Jasmine**
+- **Strengths**: Built-in BDD support, integrated spies and mocking, standalone HTML runner
+- **Philosophy**: Opinionated BDD approach with minimal configuration
+- **Ecosystem**: Good add-on support for jQuery and AJAX testing
+- **Best for**: Teams committed to BDD methodology, projects needing integrated mocking
+
+### Execution Environment Considerations
+
+Modern JavaScript testing must account for different execution environments:
+
+**Browser Testing:**
+- HTML test runners for interactive development
+- Headless browser automation for CI (Phantom.js, etc.)
+- Cross-browser compatibility testing
+
+**Node.js Testing:**
+- Server-side JavaScript and utility function testing
+- Module loading and dependency management
+- File system and network operation testing
+
+### Example: Mocha + Chai Test Structure
+
 ```javascript
-describe('Calculator', function() {
-  it('should add two numbers', function() {
-    expect(calculator.add(2, 3)).to.equal(5);
+// Example test structure showing clear organization
+describe('Calculator Module', function() {
+  describe('addition function', function() {
+    it('should add two positive numbers correctly', function() {
+      expect(calculator.add(2, 3)).to.equal(5);
+    });
+    
+    it('should handle negative numbers', function() {
+      expect(calculator.add(-2, 3)).to.equal(1);
+    });
+    
+    it('should return NaN for invalid inputs', function() {
+      expect(calculator.add('a', 2)).to.be.NaN;
+    });
+  });
+  
+  describe('subtraction function', function() {
+    it('should subtract second number from first', function() {
+      expect(calculator.subtract(5, 2)).to.equal(3);
+    });
   });
 });
 ```
 
-For similar reasons as the selection of authoring tools, **Mocha** is recommended. It is well supported, and it would easy to port a solution to another executor if ever needed. Also, it offers the most execution output options of the frameworks considered.
+## Reporting and Integration
 
-## Reporting Results
+### Current Reporting Options
 
-Surprisingly, there are not a lot of Off-the-Shelf reporting tools for unit tests (or other automated checks) nor report output formats. There are generally two reporting formats with spotty support: TAP and XUnit. Similarly, for reporting tools, only these three options were found: SonarQube, TestLink, and Smolder.
+**TAP (Test Anything Protocol)**
+- Simple, text-based format
+- Good for command-line integration
+- Supported by many CI systems
+- Example: `ok 1 - Calculator should add numbers`
 
-Both Smolder and TestLink are focused on content management of test specifications, plans, and requirements. SonarQube is focused on code analysis and reporting metrics that may indicate overall product quality. For reporting, if already using one of these tools, it is worth investigating the results of integrating JavaScript unit tests. However, it may be overkill for some teams and may be difficult to migrate to a different future solution if keeping the report history is important.
+**XUnit XML**
+- Standard format for many CI systems
+- Good integration with Jenkins, TeamCity
+- Structured data for test result analysis
+- More complex than TAP but more informative
 
-Since Mocha offers output in both TAP and XUnit, it could be sufficient to build a custom reporting tool that processes these outputs and displays the state of all checks. If the goal is to never leave checks failing, a custom reporter would be a better choice. It would be designed to only display information relevant to the team.
+**JSON Output**
+- Programmatic access to test results
+- Good for custom reporting solutions
+- Easy to parse and transform
+- Flexible for integration needs
+
+**HTML Reports**
+- Human-readable test results
+- Good for development and debugging
+- Visual feedback on test status
+- Not suitable for automated CI parsing
+
+### CI Integration Strategies
+
+**Jenkins Integration:**
+- Use XUnit XML format for test result publishing
+- Configure post-build actions to parse test results
+- Set up build failure conditions based on test outcomes
+
+**Manual CI Setup:**
+- Configure test runners to output appropriate formats
+- Create shell scripts to execute tests and capture results
+- Set up notification systems for test failures
+
+### Key Reporting Considerations
+
+When setting up test reporting, consider:
+
+- **Consistency**: Use the same format across all projects
+- **Detail level**: Balance information richness with readability
+- **Performance**: Ensure reporting doesn't significantly slow test execution
+- **Integration**: Choose formats compatible with your CI system
+
+## Implementation Strategy
+
+### Starting From Scratch
+
+1. **Begin with Chai.js** for test authoring to explore both TDD and BDD styles
+2. **Add Mocha** as test runner for flexible execution and reporting
+3. **Set up basic HTML runner** for development feedback
+4. **Configure CI integration** using TAP or XUnit XML output
+5. **Establish team conventions** for test organization and naming
+
+### Adding Tests to Existing Projects
+
+1. **Start with critical modules** that change frequently
+2. **Focus on pure functions** before tackling complex integrations
+3. **Set up development workflow** with watch modes and quick feedback
+4. **Gradually expand coverage** based on business priority
+5. **Document testing approach** for team consistency
+
+### Current Best Practices
+
+- **Keep tests simple and focused** on single behaviors
+- **Use descriptive test names** that explain what is being tested
+- **Organize tests logically** using nested describe blocks
+- **Ensure tests are independent** and can run in any order
+- **Set up consistent development workflow** across team members
+
+## Tool Selection Decision Matrix
+
+| Need | Recommended Tool | Alternative | Rationale |
+|------|------------------|-------------|-----------|
+| Assertion Library | Chai.js | Node.js built-in | Flexibility and expressiveness |
+| Test Runner | Mocha | QUnit | CI integration and reporting options |
+| Browser Testing | Mocha + HTML runner | QUnit | Better development experience |
+| CI Integration | Mocha with XUnit XML | TAP output | Standard CI system compatibility |
+
+## Conclusion
+
+JavaScript unit testing requires careful tool selection and setup, but the ecosystem provides solid options for teams willing to invest in proper configuration. The combination of Chai.js for assertions and Mocha for test execution offers the best balance of flexibility, features, and integration capabilities.
+
+The key to successful JavaScript testing is not just choosing the right tools, but establishing consistent practices and ensuring the testing workflow supports rather than hinders development productivity.
+
+As the JavaScript ecosystem continues to evolve rapidly, teams should expect to revisit tool choices periodically and be prepared to adapt their testing approaches as new options become available.
 
 ![JavaScript Unit Testing custom reporter interface - overview](/images/JSUT-1.png)
 
@@ -68,4 +231,8 @@ Since Mocha offers output in both TAP and XUnit, it could be sufficient to build
 
 ![JavaScript Unit Testing custom reporter interface - test execution](/images/JSUT-3.png)
 
-![JavaScript Unit Testing custom reporter interface - configuration](/images/JSUT-4.png) 
+![JavaScript Unit Testing custom reporter interface - configuration](/images/JSUT-4.png)
+
+---
+
+*Looking for more current JavaScript testing recommendations? Check out my [updated guide on modern JavaScript testing tools](/blog/javascript-unit-testing-2019) for insights on how the landscape has evolved.* 

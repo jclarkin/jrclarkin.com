@@ -1,0 +1,52 @@
+---
+import { getCollection } from 'astro:content';
+
+interface Props {
+  currentEntry: any;
+}
+
+const { currentEntry } = Astro.props;
+
+// Get all blog posts and sort by publish date
+const allPosts = await getCollection('blog');
+const sortedPosts = allPosts.sort((a, b) => a.data.publishDate.getTime() - b.data.publishDate.getTime());
+
+// Find current post index
+const currentIndex = sortedPosts.findIndex(post => post.slug === currentEntry.slug);
+
+// Get previous and next posts
+const previousPost = currentIndex > 0 ? sortedPosts[currentIndex - 1] : null;
+const nextPost = currentIndex < sortedPosts.length - 1 ? sortedPosts[currentIndex + 1] : null;
+
+// Helper function to truncate titles
+const truncateTitle = (title: string, maxLength: number = 60) => {
+  return title.length > maxLength ? title.slice(0, maxLength) + '...' : title;
+};
+---
+
+{(previousPost || nextPost) && (
+  <div class="bg-white/80 backdrop-blur-sm border border-white/20 rounded-xl p-6 mt-8">
+    <div class="flex justify-between items-start">
+      <div class="flex-1">
+        {previousPost && (
+          <a href={`/blog/${previousPost.slug}`} class="group block text-left">
+            <div class="text-sm text-gray-500 mb-1">← Previous</div>
+            <div class="text-purple-600 group-hover:text-purple-800 transition-colors font-medium">
+              {truncateTitle(previousPost.data.title)}
+            </div>
+          </a>
+        )}
+      </div>
+      <div class="flex-1 text-right">
+        {nextPost && (
+          <a href={`/blog/${nextPost.slug}`} class="group block text-right">
+            <div class="text-sm text-gray-500 mb-1">Next →</div>
+            <div class="text-purple-600 group-hover:text-purple-800 transition-colors font-medium">
+              {truncateTitle(nextPost.data.title)}
+            </div>
+          </a>
+        )}
+      </div>
+    </div>
+  </div>
+)} 

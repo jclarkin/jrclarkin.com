@@ -17,6 +17,9 @@ const {
   canonicalUrl
 } = Astro.props;
 
+// Helper function to strip newlines for SEO-safe titles
+const seoTitle = title.replace(/\n/g, ' ');
+
 const currentUrl = canonicalUrl || new URL(Astro.url.pathname, Astro.site).href;
 ---
 
@@ -29,7 +32,7 @@ const currentUrl = canonicalUrl || new URL(Astro.url.pathname, Astro.site).href;
     <link rel="icon" type="image/x-icon" href="/favicon.ico" />
     
     <!-- SEO Meta Tags -->
-    <title>{title}</title>
+    <title>{seoTitle}</title>
     <meta name="description" content={description} />
     <meta name="keywords" content={keywords} />
     <meta name="author" content="Jonathan Clarkin" />
@@ -37,14 +40,14 @@ const currentUrl = canonicalUrl || new URL(Astro.url.pathname, Astro.site).href;
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
     <meta property="og:url" content={currentUrl} />
-    <meta property="og:title" content={title} />
+    <meta property="og:title" content={seoTitle} />
     <meta property="og:description" content={description} />
     <meta property="og:image" content={ogImage} />
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image" />
     <meta property="twitter:url" content={currentUrl} />
-    <meta property="twitter:title" content={title} />
+    <meta property="twitter:title" content={seoTitle} />
     <meta property="twitter:description" content={description} />
     <meta property="twitter:image" content={ogImage} />
     
@@ -52,7 +55,7 @@ const currentUrl = canonicalUrl || new URL(Astro.url.pathname, Astro.site).href;
     <link rel="canonical" href={currentUrl} />
     
     <!-- Structured Data -->
-    <script type="application/ld+json" set:html={JSON.stringify({
+    <script type="application/ld+json" is:inline set:html={JSON.stringify({
       "@context": "https://schema.org",
       "@type": "Person",
       "name": "Jonathan Clarkin",
@@ -70,7 +73,7 @@ const currentUrl = canonicalUrl || new URL(Astro.url.pathname, Astro.site).href;
 
   </head>
   <body class="min-h-screen bg-white text-gray-900 font-sans flex flex-col">
-    <main class="flex-1 max-w-4xl mx-auto px-4 py-8">
+    <main class="flex-1 w-full">
       <slot />
     </main>
     
