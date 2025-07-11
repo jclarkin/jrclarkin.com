@@ -1,13 +1,20 @@
 ---
-title: "APIs With Context"
+title: "Understanding APIs Through Context"
 publishDate: 2014-01-30
-description: "This week was spent gaining context on APIs. Questions such as: Who are the consumers of the APIs, What is the minimum viable check we want in place for a single API..."
+description: "Essential questions for effective API testing: understanding consumers, defining minimum viable checks, and building comprehensive testing strategies that match real-world usage."
+keywords: "API testing, software testing, integration testing, test strategy, API consumers, functional testing"
 ---
 
-This week was spent gaining context on APIs. Questions such as: Who are the consumers of the APIs, What is the minimum viable check we want in place for a single API, and How do we ensure that our API testing is comprehensive and effective?
+This week I dove deep into understanding APIs through their context. The key questions driving my exploration: Who are the API consumers? What's the minimum viable check for each endpoint? How do we ensure comprehensive coverage without over-testing?
 
-Understanding the context of APIs is crucial for effective testing. We need to know who will be using the APIs, what their expectations are, and what scenarios they might encounter in real-world usage.
+**Context changes everything in API testing.** An internal microservice API has different reliability requirements than a public-facing REST API used by thousands of developers. The testing strategy must match the stakes.
 
-We're also exploring different approaches to API testing, from simple functional tests to more complex integration tests that simulate real-world usage patterns.
+## The Critical Questions
 
-The goal is to create a testing strategy that ensures our APIs are reliable, performant, and meet the needs of our users.
+- **Who consumes this API?** Internal teams, external partners, or public developers each have different tolerance for downtime and breaking changes.
+- **What are the core success scenarios?** Not every endpoint deserves the same level of testing rigor.
+- **How do users actually interact with this API?** Testing isolated endpoints misses the real integration patterns.
+
+We're exploring a spectrum from lightweight functional tests that verify basic request/response patterns to comprehensive integration tests that simulate realistic usage flows.
+
+The goal isn't perfect test coverage - it's **strategic coverage** that ensures our APIs are reliable, performant, and serve their intended purpose without wasting effort on unlikely edge cases.
