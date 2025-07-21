@@ -1,44 +1,30 @@
 ---
-title: "Running Technical Workshops: Lessons Learned from Teaching Test Automation"
-description: "Key insights from facilitating technical workshops, covering preparation strategies, audience engagement, and practical tips for successful knowledge transfer. Learn from real experience teaching Selenium WebDriver and automation concepts."
+title: "I was terrified to teach my first technical workshop"
+description: "I had no idea how to get 30 people from different backgrounds all writing working code in a few hours. Here's what I learned about creating a safe space for learning."
 publishDate: 2014-10-16
 author: "Jonathan Clarkin"
 ---
 
-Leading technical workshops presents unique challenges that combine subject matter expertise, teaching skills, and group facilitation. Having recently delivered a Selenium WebDriver workshop at the [Targeting Quality conference](https://kwsqa.org/) in Kitchener-Waterloo, I learned valuable lessons that apply to any technical training scenario.
+I was terrified the first time I had to teach a technical workshop. Not because I didn't know the material - I'd been working with Selenium WebDriver for years. But because I had no idea how to get 30 people from different backgrounds, with different skill levels, all writing working code in a few hours. What if everyone got stuck? What if the software didn't install properly? What if I ran out of time? What if nobody learned anything?
 
-## Workshop Context: Teaching Test Automation
+The workshop was at a conference in Kitchener-Waterloo, and I was supposed to teach people how to write automated web tests. Most of them had never touched Selenium before. Some were developers, some were testers, some were managers who wanted to understand what their teams were doing. I had three hours to get them all from zero to working code.
 
-The workshop focused on empowering 30+ attendees to author Selenium WebDriver scripts - a practical, hands-on introduction to web automation testing and quality assurance methodologies. Like many technical workshops, success depended on getting everyone from basic concepts to working code in a limited timeframe while managing diverse skill levels and technical environments.
+I spent weeks preparing. I wrote detailed instructions, created sample projects, tested everything on different operating systems. I rehearsed my presentation over and over. I made backup plans for when things would inevitably go wrong. I barely slept the night before.
 
-My primary goal was helping attendees move from theoretical knowledge to hands-on confidence with Selenium WebDriver, test automation frameworks, and quality engineering practices. I wanted everyone to leave with working code on their laptops and a clear path forward for their automation journey. Most importantly, I hoped to demystify web automation and show that anyone willing to learn could start building useful test scripts for continuous integration pipelines.
+The day of the workshop, I got there early to set up. I tested the projector, checked the internet connection, made sure I had water. I was nervous but ready. Then people started showing up, and I realized something important: they were just as nervous as I was. They wanted to learn, but they were worried about looking stupid or falling behind.
 
-Leading this workshop required curriculum development, instructional design, and real-time technical troubleshooting across multiple development environments. It was my first time leading a class outside of my workplace, and thus was both scary and exciting. Here are some of my key lessons learned:
+I started by telling them exactly what we were going to do and why it mattered. I showed them a simple test that clicked a button and verified the result. Then I broke it down step by step. I walked around the room constantly, checking on people, answering questions, helping them debug when things went wrong.
 
-## Mental Preparation
+Some people got stuck on software installation. Others had trouble with the syntax. A few had questions about why we were doing things a certain way. I tried to help everyone individually while keeping the group moving forward. It was exhausting, but it was working.
 
-- **Rehearsal & Content Mastery**: The more you rehearse your material, the less nervous you will be repeating it to a new crowd. Also, the more you have the content memorized, the less you need to read a script. The less scripted it feels, the more natural you will come across as knowledgeable about your material - crucial when demonstrating complex technical concepts like browser automation and test frameworks.
-- **Rest**: Set aside a full night's rest, even if you may have trouble using it due to anxiety. Clear thinking is essential when troubleshooting technical issues in real-time.
-- **Location**: Get access to the location before your presentation. Get acquainted with your workshop environment, setup your material, and test out the hardware connections before attendees arrive. Validate network connectivity, projector compatibility, and room acoustics.
-- **Hydration**: Have water ready for yourself. All that talking and moving can lead to dehydration, especially during intensive coding demonstrations.
-- **Worst Case Scenario Planning**: Answer this question: What is the worst thing that can happen if your workshop is a flop? You will still be alive, and able to learn from your experience. And in time you will be able to be even more successful. By envisioning the worst case scenario, you will see that it is not the end of the world, and hopefully you will be less worried about failure.
+The breakthrough moment came when someone raised their hand and said "I think I understand this now." Then another person said the same thing. Pretty soon, people were helping each other. They were asking good questions about how to apply this to their own projects. They were excited about what they could build.
 
-## Material Preparation & Technical Infrastructure
+By the end of the workshop, almost everyone had working code. More importantly, they had confidence. They knew they could figure out automation problems on their own. They had a clear path forward for learning more.
 
-- **Hardware Setup & Environment Management**: If you have special room considerations, ensure that they are ready before the workshop. For example, if your attendees are to bring their laptops, ensure that they will have access to power outlets during the workshop. Plan for multiple operating systems (Windows, Mac, Linux) and varying technical configurations.
-- **Software Setup & DevOps**: If you have special software that participants will need, try to get attendees setup before the start of the workshop. Software installation and configuration on 30+ disparate machines can easily eat up time, and is not effective for the class as a whole. Virtualize or pre-package software on USB drives as much as possible. Consider containerized environments for consistent development setups.
-- **Documentation & Knowledge Transfer**: For a presentation, the slide deck need not be comprehensive as you expect the audience to take away the experience from your speaking. However, for a workshop, the attendees will likely want a copy of the slides to use as future reference sheets to revisit and even relearn the material covered during the workshop. This means that you will need to provide more thorough and standalone content to best enable their future success with test automation implementation.
+What I learned is that teaching technical workshops isn't about being the smartest person in the room. It's about creating an environment where people feel safe to try things, make mistakes, and ask questions. It's about breaking complex topics into digestible pieces and giving people time to practice. It's about being present and responsive to what's actually happening in the room, not just following a script.
 
-## People Management & Leadership
+The preparation mattered, but not in the way I expected. Having backup plans and detailed materials was important, but the real work happened in the moment. I had to read the room, adjust my pace, and help people when they got stuck. I had to be comfortable not knowing everything and willing to learn alongside them.
 
-- **Stakeholder Communication**: Some attendees may have follow-up questions or comments. Have a way for them to contact you (email address, Twitter, social media). If and when they do ask questions, get back to them in a timely fashion. This builds professional networks and establishes you as a thought leader in the testing community.
-- **Passion & Technical Authority**: Attendees can sense your emotional state on a topic. Try to stick to a topic you really care about and enjoy. Your passion for quality engineering will show through your interactions, your desire to learn more on the topic, and your wanting to share your discoveries with others.
-- **Handling Questions & Mentoring**: Practice handling tough questions about complex testing scenarios, framework architecture, or debugging strategies. Odds are someone will ask something you do not have an answer to. Be prepared for this, and don't freeze. It is okay to not know everything! Ask the audience for answers, offer to get back to them with an answer at a later date, or point them in a reasonable direction to finding more information. This demonstrates leadership through vulnerability and collaborative problem-solving.
+The workshop opened doors I didn't expect. People reached out afterward with questions about implementing automation at their companies. Conference organizers asked me to come back. I built relationships that lasted years. But the biggest impact was on me - I realized I actually enjoyed teaching. I liked helping people understand complex topics and seeing that moment when something clicks.
 
-## Professional Impact & Growth
-
-The workshop opened doors to valuable professional networking opportunities within the quality assurance and software testing community. Several attendees reached out afterward with implementation questions, creating ongoing mentoring relationships that continue to inform my understanding of real-world automation challenges.
-
-The positive feedback and engagement from participants led the conference organizers to express strong interest in having me return for future events, highlighting the value of technical leadership and knowledge sharing in building professional reputation and expanding career opportunities in the software development and testing space.
-
-Successfully delivering technical content to diverse audiences demonstrates key competencies in project management, curriculum development, public speaking, and technical mentoring - all valuable skills for senior engineering roles and leadership positions in software quality and test automation. 
+What I ended up doing was treating the workshop like a conversation rather than a lecture. I focused on creating a safe space for learning, being responsive to what people actually needed, and helping them build confidence through small successes. The technical content was important, but the human element was what made it work. 
