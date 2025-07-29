@@ -1,12 +1,11 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 import TableOfContents from '../../components/TableOfContents.astro';
-import BlogNavigation from '../../components/BlogNavigation.astro';
 import { getCollection } from 'astro:content';
 
 export async function getStaticPaths() {
-  const blogEntries = await getCollection('blog');
-  return blogEntries.map(entry => ({
+  const guidesEntries = await getCollection('guides');
+  return guidesEntries.map(entry => ({
     params: { slug: entry.slug }, 
     props: { entry },
   }));
@@ -38,21 +37,21 @@ const displayTitle = entry.data.title.replace(/\n/g, '<br>');
   <nav class="mb-12 text-center">
     <div class="flex gap-8 justify-center items-center">
       <a href="/" class="text-gray-700 hover:text-purple-600 transition-colors font-medium">Home</a>
-      <a href="/blog" class="text-purple-600 font-semibold">Blog</a>
-      <a href="/guides" class="text-gray-700 hover:text-purple-600 transition-colors font-medium">Guides</a>
+      <a href="/blog" class="text-gray-700 hover:text-purple-600 transition-colors font-medium">Blog</a>
+      <a href="/guides" class="text-purple-600 font-semibold">Guides</a>
       <a href="/tools" class="text-gray-700 hover:text-purple-600 transition-colors font-medium">Tools</a>
       <a href="https://www.linkedin.com/in/jonathanclarkin" class="text-gray-700 hover:text-purple-600 transition-colors font-medium" target="_blank" rel="noopener noreferrer">LinkedIn</a>
     </div>
   </nav>
   
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <!-- Back to blog link -->
+    <!-- Back to guides link -->
     <nav class="mb-8">
-      <a href="/blog" class="inline-flex items-center text-purple-600 hover:text-purple-800 transition-colors font-medium">
+      <a href="/guides" class="inline-flex items-center text-purple-600 hover:text-purple-800 transition-colors font-medium">
         <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
           <path fill-rule="evenodd" d="M9.707 16.707a1 1 0 01-1.414 0l-6-6a1 1 0 010-1.414l6-6a1 1 0 011.414 1.414L5.414 9H17a1 1 0 110 2H5.414l4.293 4.293a1 1 0 010 1.414z" clip-rule="evenodd" />
         </svg>
-        Back to Blog
+        Back to Guides
       </a>
     </nav>
 
@@ -78,9 +77,6 @@ const displayTitle = entry.data.title.replace(/\n/g, '<br>');
       <!-- Table of Contents -->
       <TableOfContents headings={headings} />
     </div>
-
-    <!-- Blog Navigation -->
-    <BlogNavigation currentEntry={entry} />
 
   </div>
 </Layout> 

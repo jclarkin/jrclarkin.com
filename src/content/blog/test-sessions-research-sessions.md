@@ -1,34 +1,17 @@
 ---
-title: "Applying Test Sessions to Research"
-description: "Using test session methodology to structure research investigations - treating knowledge domains as testable systems and documenting the exploration process."
+title: "I realized I was testing a domain of knowledge"
+description: "A colleague asked me to investigate JavaScript unit testing options, and I had an epiphany: I'm testing something, so why not use test session methodology to structure the research?"
 publishDate: 2014-03-10
 author: "Jonathan Clarkin"
 keywords: "test sessions, research methodology, exploratory testing, JavaScript unit testing, knowledge testing, research documentation"
 ---
 
-A colleague asked me to investigate JavaScript unit testing options for developers. While planning my approach, a realization struck: **I'm testing something - a domain of knowledge.** 
+My responsibilities include researching and investigating tools to help others test software. I was recently asked to investigate options for helping developers author unit tests for JavaScript applications.
 
-If I'm testing, why not use proven testing techniques to structure the investigation?
+While thinking about performing the investigation, it came to me that I was testing something: a domain of knowledge. And what is a good tool to record such testing? Test sessions!
 
-## Test Sessions for Knowledge Exploration
+So I'm experimenting with this idea. I gave thought to my mission, wrote up an initial charter of exploration ideas, and have begun recording my path through the internet and contacts to learn more on JavaScript unit testing. Once I wrap it up, I will likely have more charters to explore and can try my hand at my first test report to hand back to the person requesting this information.
 
-Enter the experiment: applying test session methodology to research. I've:
-- Defined a **mission**: Evaluate JavaScript unit testing tools for developer adoption
-- Written an **initial charter**: Explore available testing libraries, frameworks, and tooling
-- Started **documenting my path** through online resources, documentation, and community contacts
+What I ended up doing was treating knowledge exploration like any other testable system. Instead of wandering through JavaScript testing frameworks aimlessly, I'm applying the same structured thinking I use for software testing - with hypotheses, exploration strategies, and documented outcomes.
 
-## Why This Approach Works
-
-Test sessions bring structured thinking to research:
-- **Time-boxed exploration** prevents endless rabbit holes
-- **Charter-driven focus** keeps investigation targeted
-- **Session notes** capture both discoveries and dead ends
-- **Explicit reporting** creates actionable deliverables
-
-Instead of wandering through JavaScript testing frameworks aimlessly, I'm treating the problem space like any testable system - with hypotheses, exploration strategies, and documented outcomes.
-
-## The Meta-Learning
-
-This experiment in applied methodology has a bonus: I'm simultaneously learning JavaScript testing tools AND improving my research process. The session notes will become the foundation for my first formal test report outside traditional software testing.
-
-**The insight**: If knowledge domains can be explored like software systems, then testing techniques can improve how we learn and share discoveries. Time to see where this chartered exploration leads! 
+The insight is that if knowledge domains can be explored like software systems, then testing techniques can improve how we learn and share discoveries. Time to see where this chartered exploration leads! 

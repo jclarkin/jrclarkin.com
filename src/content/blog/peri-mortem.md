@@ -35,4 +35,6 @@ When I actually left a few months later, the transition was remarkably smooth. T
 
 What I ended up doing was treating my departure as a collaborative problem-solving exercise instead of a personal handoff. By imagining the worst-case scenario and working backward, we uncovered all that invisible work that makes teams function. The peri-mortem process turned what could have been a disruptive departure into an opportunity to strengthen the team and improve how they work together.
 
-The key insight is that most departures fail not because the person is irreplaceable, but because teams don't understand the full scope of what they're losing. A peri-mortem surfaces all that invisible work and gives everyone a chance to plan for it proactively. It's a way to leave a team stronger than you found it, even as you're walking out the door. 
+The key insight is that most departures fail not because the person is irreplaceable, but because teams don't understand the full scope of what they're losing. A peri-mortem surfaces all that invisible work and gives everyone a chance to plan for it proactively. It's a way to leave a team stronger than you found it, even as you're walking out the door.
+
+I tried to capture my learnings in a [guide for myself and others](/guides/peri-mortem-guide) who want to plan smooth team departures. 

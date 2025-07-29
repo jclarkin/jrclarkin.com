@@ -1,0 +1,79 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { getCollection } from 'astro:content';
+
+const guides = await getCollection('guides');
+guides.sort((a, b) => b.data.publishDate.valueOf() - a.data.publishDate.valueOf());
+---
+
+<Layout 
+  title="Guides - Jonathan Clarkin"
+  description="Practical guides and detailed resources for team leadership, facilitation, and technical workshops."
+>
+  <!-- Background Gradient -->
+  <div class="fixed inset-0 -z-10 bg-gradient-to-br from-purple-50 via-blue-50 to-indigo-100"></div>
+  <div class="fixed inset-0 -z-10 bg-gradient-to-tr from-purple-100/30 via-transparent to-blue-100/30"></div>
+
+  <!-- Navigation -->
+  <nav class="mb-12 text-center">
+    <div class="flex gap-8 justify-center items-center">
+      <a href="/" class="text-gray-700 hover:text-purple-600 transition-colors font-medium">Home</a>
+      <a href="/blog" class="text-gray-700 hover:text-purple-600 transition-colors font-medium">Blog</a>
+      <a href="/guides" class="text-purple-600 font-semibold">Guides</a>
+      <a href="/tools" class="text-gray-700 hover:text-purple-600 transition-colors font-medium">Tools</a>
+      <a href="https://www.linkedin.com/in/jonathanclarkin" class="text-gray-700 hover:text-purple-600 transition-colors font-medium" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+    </div>
+  </nav>
+
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+    <!-- Header -->
+    <header class="text-center mb-16">
+      <h1 class="text-5xl font-bold text-gray-900 mb-6">Guides</h1>
+      <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+        Detailed resources and practical guides for team leadership, facilitation, and technical workshops.
+      </p>
+    </header>
+
+    <!-- Guides List -->
+    <div class="space-y-8">
+      {guides.map((guide) => {
+        const formattedDate = guide.data.publishDate.toLocaleDateString('en-US', { 
+          year: 'numeric', 
+          month: 'long', 
+          day: 'numeric' 
+        });
+        
+        return (
+          <article class="bg-white/80 backdrop-blur-sm border border-white/20 rounded-xl p-8 shadow-lg hover:shadow-xl transition-shadow">
+            <div class="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-4">
+              <div class="flex-1">
+                <h2 class="text-2xl font-bold text-gray-900 mb-3">
+                  <a href={`/guides/${guide.slug}`} class="hover:text-purple-600 transition-colors">
+                    {guide.data.title}
+                  </a>
+                </h2>
+                <p class="text-gray-600 mb-4 leading-relaxed">
+                  {guide.data.description}
+                </p>
+                <div class="text-sm text-gray-500">
+                  Published {formattedDate}
+                </div>
+              </div>
+              <div class="lg:flex-shrink-0">
+                <a 
+                  href={`/guides/${guide.slug}`}
+                  class="inline-flex items-center px-4 py-2 bg-purple-600 text-white font-medium rounded-lg hover:bg-purple-700 transition-colors"
+                >
+                  Read Guide
+                  <svg class="w-4 h-4 ml-2" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </article>
+        );
+      })}
+    </div>
+  </div>
+</Layout> 

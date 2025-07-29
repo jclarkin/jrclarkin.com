@@ -27,4 +27,6 @@ The preparation mattered, but not in the way I expected. Having backup plans and
 
 The workshop opened doors I didn't expect. People reached out afterward with questions about implementing automation at their companies. Conference organizers asked me to come back. I built relationships that lasted years. But the biggest impact was on me - I realized I actually enjoyed teaching. I liked helping people understand complex topics and seeing that moment when something clicks.
 
-What I ended up doing was treating the workshop like a conversation rather than a lecture. I focused on creating a safe space for learning, being responsive to what people actually needed, and helping them build confidence through small successes. The technical content was important, but the human element was what made it work. 
+What I ended up doing was treating the workshop like a conversation rather than a lecture. I focused on creating a safe space for learning, being responsive to what people actually needed, and helping them build confidence through small successes. The technical content was important, but the human element was what made it work.
+
+I tried to capture my learnings in a [guide for myself and others](/guides/technical-workshop-facilitation-guide) who want to run technical workshops. 
